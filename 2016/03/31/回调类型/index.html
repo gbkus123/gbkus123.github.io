@@ -96,7 +96,7 @@
 
  php 函数在传递时 函数名以 string 传递,包括内置和用户自定义函数,但不包括语言结构 
  实例化后的对象,例如:$a=new a()在传递时,要传递一个[0=&amp;gt;$a,1=&amp;gt;方法名]的数组,">
-<meta property="og:updated_time" content="2016-04-23T07:03:26.000Z">
+<meta property="og:updated_time" content="2016-04-23T07:09:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回调类型">
 <meta name="twitter:description" content="回调类型:一些函数 可以接受用户自定义的函数 对象的方法(包括静态方法)作为参数 
@@ -334,7 +334,9 @@
 <p>传递</p>
 </blockquote>
 <p> php 函数在传递时 函数名以 string 传递,包括内置和用户自定义函数,但不包括语言结构 </p>
-<p> 实例化后的对象,例如:<code>$a=new a()</code>在传递时,要传递一个<code>[0=&gt;$a,1=&gt;方法名]</code>的数组,<br> <a id="more"></a>?<br> 静态的方法可以不经过实例化该类,有两种方法:</p>
+<p> 实例化后的对象,例如:<code>$a=new a()</code>在传递时,要传递一个<code>[0=&gt;$a,1=&gt;方法名]</code>的数组,</p>
+ <a id="more"></a>
+<p> 静态的方法可以不经过实例化该类,有两种方法:</p>
 <p> 1:数组<code>[0=&gt;类名,1=&gt;方法名+]]</code></p>
 <p> 2:一个参数 class::functionname</p>
 <pre><code> &lt;?php 
