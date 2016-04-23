@@ -1,0 +1,937 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="声明和访问一个对象
+
+&amp;lt;?php
+//声明
+$a=(object)[1,2,3];
+var_dump($a);
+  // object(stdClass)[1]
+ //      public 0 =&amp;gt; int 1
+ //      public 1 =&amp;gt; int 2
+ //      public 2 =&amp;gt; int 3
+// 两种访问方式
+class a{
+    pu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类和对象-基础">
+<meta property="og:url" content="http://yoursite.com/2016/03/23/类和对象 /index.html">
+<meta property="og:site_name" content="中二病也要写代码">
+<meta property="og:description" content="声明和访问一个对象
+
+&amp;lt;?php
+//声明
+$a=(object)[1,2,3];
+var_dump($a);
+  // object(stdClass)[1]
+ //      public 0 =&amp;gt; int 1
+ //      public 1 =&amp;gt; int 2
+ //      public 2 =&amp;gt; int 3
+// 两种访问方式
+class a{
+    pu">
+<meta property="og:updated_time" content="2016-04-22T15:21:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="类和对象-基础">
+<meta name="twitter:description" content="声明和访问一个对象
+
+&amp;lt;?php
+//声明
+$a=(object)[1,2,3];
+var_dump($a);
+  // object(stdClass)[1]
+ //      public 0 =&amp;gt; int 1
+ //      public 1 =&amp;gt; int 2
+ //      public 2 =&amp;gt; int 3
+// 两种访问方式
+class a{
+    pu">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 类和对象-基础 | 中二病也要写代码 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?43fcc61fac5355f89b96342f4f1972c1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">中二病也要写代码</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                类和对象-基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-23T13:22:15+08:00" content="2016-03-23">
+              2016-03-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/23/类和对象 /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/23/类和对象 /" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>声明和访问一个对象</p>
+</blockquote>
+<pre><code>&lt;?php
+//声明
+$a=(object)[1,2,3];
+var_dump($a);
+  // object(stdClass)[1]
+ //      public 0 =&gt; int 1
+ //      public 1 =&gt; int 2
+ //      public 2 =&gt; int 3
+// 两种访问方式
+class a{
+    public $a=1;
+}
+$a=new a();
+echo $a-&gt;a;//1
+echo (new a())-&gt;a;//1
+</code></pre><blockquote>
+<p>声明一个类</p>
+</blockquote>
+<pre><code>&lt;?php
+class Test{
+    //为了符合psr-0类的首字母要大写
+    public $a=1;
+    public function getA(){
+    return $this-&gt;a;//类中内部调用可以使用伪变量，$this,既是对该类的引用
+    }
+}
+echo  (new Test())-&gt;getA();//输出 1 
+</code></pre><blockquote>
+<p>伪变量$this</p>
+</blockquote>
+<pre><code>    &lt;?php
+class abc{
+    function foo(){
+        if(isset($this)){
+            echo  &apos;$this object name:&apos;.get_class($this).&quot;&lt;/br&gt;&quot;;
+        }
+        else{
+        echo  &apos;$this is not defined&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    }
+}
+class efg{
+    function bar(){
+        abc::foo();
+    }
+}
+(new abc())-&gt;foo();//$this object name: abc
+ abc::foo();//$this is not defined 并且报错 不是静态方法不能用::,
+ //静态类不允许使用$this这个为伪变量所以静态调用一个非静态方法也会这样
+ (new efg())-&gt;bar();//$this object name : eft  并且报错 不是静态方法不能用::
+ // 与上面不同从第二个类里面静态调用时返回的发起调用的那个方法也就是bar(),此时返回的是类efg
+ efg::bar();//$this is not defined  并且报错 不是静态方法不能用::与上面的上面那个同理
+</code></pre><blockquote>
+<p>new 关键字</p>
+</blockquote>
+<pre><code>&lt;?php
+
+class Defined{
+    public $a=1;
+    function abc(){
+        echo &apos;abc&apos;;
+    }
+}
+// $undefined=new undefined();//fatal error,因为没有找个这个类
+echo (new Defined())-&gt;a;//1
+$className=&apos;Defined&apos;;
+echo  (new $className())-&gt;abc();
+//abc，可以用和类名相同的字符串来创建一个对象
+$obj=new Defined();
+echo $obj-&gt;a;//1
+</code></pre><blockquote>
+<p>类的引用和赋值</p>
+</blockquote>
+<pre><code>&lt;?php
+class obj{
+    public $a = 0;
+}
+$old = new obj();
+$givedOld = $old;
+$pointOld = &amp;$old;
+echo ($old===$givedOld);//1,true
+echo ($pointOld===$old);//1,true
+$old-&gt;a=1;//此时 old giveold pointold 的$a都等于1
+//因为虽然 (old与 pointold)  和 giveold 存储位置不同,但是属性都属于一个对象(类)
+$old=null;//Old 和 pointold存储位置相同所以都被覆盖为Null,但giveold和他们的存储位置
+//是不同的不会被覆盖,并且依然保留从之前对象复制的属性
+var_dump($old);//null
+var_dump($givedOld);//object{public a =&gt; 1}
+var_dump($pointOld);//null
+//对象引用和赋值和其他标量类型差不多，赋值是创建了一个新对象
+</code></pre><blockquote>
+<p>new self;</p>
+</blockquote>
+<pre><code>&lt;?php
+//new self,当self前面加上new的时候，返回(引用)的是:
+//和new self这行代码所在的类,相同的类
+class A{
+    function  getSelf(){
+        return new self;
+    }
+    static function getSelfs(){
+        return new self;
+    }
+}
+class B extends A{
+
+}
+$a=new A();
+$b=new B();
+echo get_class($a-&gt;getSelf()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class($b-&gt;getSelf()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class(A::getSelfs()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class(B::getSelfs()).&quot;&lt;/br&gt;&quot;;//A
+</code></pre><blockquote>
+<p>new parent ;</p>
+</blockquote>
+<pre><code>&lt;?php
+//new parent,返回:
+//和new parent这行代码所在的父类,相同的类
+class A{
+
+}
+class B extends A{
+function  getParent(){
+        return new parent;
+    }
+    static function getParents(){
+        return new parent;
+    }
+}
+class C extends B{
+
+}
+$a=new A();
+$b=new B();
+$c=new C();
+echo get_class($b-&gt;getParent()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class(B::getParents()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class($c-&gt;getParent()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class(C::getParents()).&quot;&lt;/br&gt;&quot;;//A
+</code></pre><blockquote>
+<p>new static;</p>
+</blockquote>
+<pre><code>&lt;?php
+//new static,返回:
+//引用,调用方法时所在的类
+class A{
+    function  getStatic(){
+        return new static;
+    }
+    static function getStatics(){
+        return new static;
+    }
+}
+class B extends A{
+
+}
+$a=new A();
+$b=new B();
+echo get_class($a-&gt;getStatic()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class(A::getStatics()).&quot;&lt;/br&gt;&quot;;//A
+echo get_class($b-&gt;getStatic()).&quot;&lt;/br&gt;&quot;;//B
+echo get_class(B::getStatics()).&quot;&lt;/br&gt;&quot;;//B
+</code></pre><blockquote>
+<p>创建新对象的林外一种方式 ,new $obj(一个对象变量)</p>
+</blockquote>
+<pre><code>    &lt;?php
+class A{
+    function  getSelf(){
+        return new self;
+    }
+    static function getStatic(){
+        return new static;
+    }
+}
+class B extends A{
+    function getParent(){
+        return new parent;
+    }
+}
+$a=new A();
+$b=new B();
+$A=new $a;
+$B=new $b;
+var_dump ($a===$A);//false
+var_dump ($b===$B);//false
+echo get_class($A-&gt;getSelf()).&quot;&lt;/br&gt;&quot;;//A
+var_dump ($A instanceof A).&quot;&lt;/br&gt;&quot;;//true
+echo get_class($B-&gt;getParent()).&quot;&lt;/br&gt;&quot;;//A
+var_dump ($B-&gt;getParent() instanceof B).&quot;&lt;/br&gt;&quot;;//false
+var_dump ($B-&gt;getParent() instanceof A).&quot;&lt;/br&gt;&quot;;//true
+</code></pre><blockquote>
+<p>final 关键字 与 继承</p>
+</blockquote>
+<p>php继承为单继承,只能继承一个父类</p>
+<pre><code>&lt;?php
+//方法被声明为 final 的话子类不能被声明,而声明为 Final 的类不能被继承
+class Finfunc{
+    final public function test(){
+        echo &quot;the Final function &quot;;
+    }
+    public function arguments($one){
+
+    }
+    public function __construct($one){
+
+    }
+}
+// class child extends Finfunc{
+
+//     public function test(){
+//         echo &quot;this&apos;s will report a fatal error&quot;;
+//         //这里会报错:Fatal error: Cannot override final method Finfunc::test() i
+//     }
+// final class FinClass{}
+// class childs extends FinClass{
+//     //这里会报错: Fatal error: Class childs may not inherit from final class 
+// }    
+class children extends Finfunc{
+    function a(){
+    $this-&gt;test();//输出the Final function
+    parent::test();    //输出the Final function
+}
+    public function arguments($one,$two){
+        echo $one;//输出1
+        echo $two;//输出2
+        //此处会抱一个 e_strict的错误,重载函数时参数要一致
+
+    }
+    public function __construct($three=0,$four=0){
+        //构造函数被覆盖时如果参数不一致不会报错误
+        echo $three;//输出3
+        echo $four;//输出4
+    }
+}
+
+(new children(3,4))-&gt;arguments(1,2);
+
+(new children)-&gt;a();
+</code></pre><blockquote>
+<p>::class</p>
+</blockquote>
+<pre><code>&lt;?php
+class name{
+
+}
+echo name::class;//输出 name
+</code></pre><p>自 PHP 5.5 起，关键词 class 也可用于类名的解析。使用 ClassName::class 你可以获取一个字符串，包含了类 ClassName 的完全限定名称。这对使用了 命名空间 的类尤其有用。</p>
+<pre><code>&lt;?php
+namespace NS {
+class ClassName {
+}
+
+    echo ClassName::class;//输出　NS\ClassName
+}
+?&gt;
+</code></pre><blockquote>
+<p>demo</p>
+</blockquote>
+<pre><code>&lt;?php
+
+class a {
+
+    public static $foo = &apos;I am foo&apos;.&quot;&lt;/br&gt;&quot;;
+    public $bar = &apos;I am bar&apos;.&quot;&lt;/br&gt;&quot;;
+
+    public static function getFoo() { echo self::$foo;    }
+    public static function setFoo() { self::$foo = &apos;I am a new foo&apos;; }
+    public function getBar() { echo $this-&gt;bar;    }            
+}
+
+$ob = new a();
+a::getFoo();     // output: I am foo    
+$ob-&gt;getFoo();    // output: I am foo
+// a::getBar();     // fatal error: using $this not in object context
+$ob-&gt;getBar();    // output: I am bar
+                // If you keep $bar non static this will work
+                // but if bar was static, then var_dump($this-&gt;bar) will output null 
+
+// unset($ob);
+a::setFoo();    // The same effect as if you called $ob-&gt;setFoo(); because $foo is static
+$c = new a();     // This will have no effects on $foo
+$-&gt;getFoo();    // output: I am a new foo 
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+//两种方式创建一个空对象,但一般用不到
+$way1=new stdClass;
+//stdClass 是一个php 内置类,再将一些标量转化为对象时
+//会默认创建了一个 stdclass 的事例
+echo get_class((object)[1,23]).&quot;&lt;/br&gt;&quot;;//stdClass
+$way1-&gt;a=&apos;a&apos;;
+echo $way1-&gt;a.&quot;&lt;/br&gt;&quot;;//输出a
+
+$way2=json_decode(&apos;{}&apos;);
+$way2-&gt;b=&apos;b&apos;;
+echo $way2-&gt;b;//输出 b
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/18/php数组/" rel="next" title="php数组">
+                <i class="fa fa-chevron-left"></i> php数组
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/26/类和对象-属性/" rel="prev" title="类和对象-属性">
+                类和对象-属性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/23/类和对象 /"
+           data-title="类和对象-基础" data-url="http://yoursite.com/2016/03/23/类和对象 /">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="uploads/touxiang.jpeg"
+               alt="秋哥" />
+          <p class="site-author-name" itemprop="name">秋哥</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">秋哥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gbq"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

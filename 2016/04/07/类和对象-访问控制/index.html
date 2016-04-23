@@ -1,0 +1,924 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="对属性和方法的访问控制有三个关键字:
+public : 公用的类成员可以在任何地方被访问
+protected : 受保护的类成员可以被自身 子类 父类访问
+private : 私有的类成员只能在定义的类里访问
+
+属性的访问控制
+
+&amp;lt;?php
+
+class A{
+    public $publicA = &amp;apos;publicA&amp;apos;.&amp;quot;&amp;lt;/br&amp;gt;&amp;quot;;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="访问控制">
+<meta property="og:url" content="http://yoursite.com/2016/04/07/类和对象-访问控制/index.html">
+<meta property="og:site_name" content="中二病也要写代码">
+<meta property="og:description" content="对属性和方法的访问控制有三个关键字:
+public : 公用的类成员可以在任何地方被访问
+protected : 受保护的类成员可以被自身 子类 父类访问
+private : 私有的类成员只能在定义的类里访问
+
+属性的访问控制
+
+&amp;lt;?php
+
+class A{
+    public $publicA = &amp;apos;publicA&amp;apos;.&amp;quot;&amp;lt;/br&amp;gt;&amp;quot;;">
+<meta property="og:updated_time" content="2016-04-22T15:22:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="访问控制">
+<meta name="twitter:description" content="对属性和方法的访问控制有三个关键字:
+public : 公用的类成员可以在任何地方被访问
+protected : 受保护的类成员可以被自身 子类 父类访问
+private : 私有的类成员只能在定义的类里访问
+
+属性的访问控制
+
+&amp;lt;?php
+
+class A{
+    public $publicA = &amp;apos;publicA&amp;apos;.&amp;quot;&amp;lt;/br&amp;gt;&amp;quot;;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 访问控制 | 中二病也要写代码 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?43fcc61fac5355f89b96342f4f1972c1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">中二病也要写代码</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                访问控制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-07T13:35:33+08:00" content="2016-04-07">
+              2016-04-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/07/类和对象-访问控制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/07/类和对象-访问控制/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对属性和方法的访问控制有三个关键字:</p>
+<p>public : 公用的类成员可以在任何地方被访问</p>
+<p>protected : 受保护的类成员可以被自身 子类 父类访问</p>
+<p>private : 私有的类成员只能在定义的类里访问</p>
+<blockquote>
+<p>属性的访问控制</p>
+</blockquote>
+<pre><code>&lt;?php
+
+class A{
+    public $publicA = &apos;publicA&apos;.&quot;&lt;/br&gt;&quot;;
+    protected $protectedA = &apos;protectedA&apos;.&quot;&lt;/br&gt;&quot;;
+    private $privateA = &apos;privateA&apos;.&quot;&lt;/br&gt;&quot;;
+    public function pulicFuncA(){
+        echo &apos;this is publicA&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function protectedFuncA(){
+        echo &apos;this is protectedA&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function privateFuncA(){
+        echo &apos;this is privateA&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function getProtected(){
+        echo $this-&gt;protectedA;
+    }
+    public function getPrivate(){
+        echo $this-&gt;privateA ;
+    }
+
+}
+$a = new A();
+echo $a-&gt;publicA;//publicA
+// echo $a-&gt;protectedA;//fatal error
+// echo $a-&gt;privateA;//fatal error
+$a-&gt;pulicFuncA();//this is publicA
+// $a-&gt;protectedFuncA();//fatal error
+// $a-&gt;privateFuncA();//fatal error
+$a-&gt;getProtected();//protectedA
+$a-&gt;getPrivate();//privateA
+
+//子类可以修改父类Public protected 的属性
+//同名的 private 的属性不可以被重置,子类调用父类的 &apos;获取同名私有属性&apos; 方法时,
+//访问的是父类的 私有属性,下面这个例子中获取子类的私有属性,重新写一个
+//获取该私有属性的方法
+class B extends A{
+    public $publicA = &apos;publicB&apos;.&quot;&lt;/br&gt;&quot;;
+    protected $protectedA = &apos;protectedB&apos;.&quot;&lt;/br&gt;&quot;;
+    private $privateA = &apos;asdf&apos;;
+    public function getPrivateB(){
+        echo $this-&gt;privateA;
+    }
+}
+$b = new B();
+echo $b-&gt;publicA;//publicB
+$b-&gt;getProtected();//protectedB
+$b-&gt;getPrivate();//privateA
+$b-&gt;getPrivateB();//asdf
+</code></pre><blockquote>
+<p>方法的访问控制</p>
+</blockquote>
+<p>方法的访问控制,声明访问控制和属性一样,如果不声明默认 Public</p>
+<pre><code>&lt;?php
+class A 
+{
+    public function b(){
+        echo &apos;this is b &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function c(){
+        echo &apos;this is c &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function d(){
+        echo &apos;this is d &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+$a = new A();
+
+$a-&gt;b();//this is b
+// $a-&gt;c();//fatal error
+// $a-&gt;d();//fatal error
+</code></pre><p>同属性一样父类的 Pulic protected 方法可以被调用,也可以重载,但 private 方法不可以</p>
+<pre><code>&lt;?php
+class A 
+{
+    public function b(){
+        echo &apos;this is A b &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function c(){
+        echo &apos;this is A c &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function d(){
+        echo &apos;this is A d &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public  function execProtected(){
+        $this-&gt;c();
+    }
+    public function execPrivate(){
+        $this-&gt;d();
+    }
+}
+class Bar extends A{
+    public function b(){
+        echo &apos;this is B b &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function c(){
+        echo &apos;this is B c &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function d(){
+        echo &apos;this is A d &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+$a = new A();
+$b = new Bar();
+$b -&gt; b();//this is B b 
+$b -&gt; execProtected();//this is B c 
+$b -&gt; execPrivate();//this is A d 
+</code></pre><p>或者下面这个例子</p>
+<pre><code>&lt;?php
+class Foo
+{
+    public function  exec(){
+        $this -&gt;func1();
+        $this -&gt;func2();
+        $this -&gt;func3();
+    }
+    public function func1(){
+        echo &apos;this is Foo fun1&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function func2(){
+        echo &apos;this is Foo fun2&apos;.&quot;&lt;/br&gt;&quot;;
+    } 
+    private function func3(){
+        echo &apos;this is Foo fun3&apos;.&quot;&lt;/br&gt;&quot;;    
+    }
+}
+class Bar extends Foo{
+
+    public function func1(){
+        echo &apos;this is Bar fun1&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function func2(){
+        echo &apos;this is Bar fun2&apos;.&quot;&lt;/br&gt;&quot;;
+    } 
+    private function func3(){
+        echo &apos;this is Bar fun3&apos;.&quot;&lt;/br&gt;&quot;;    
+    }
+
+}
+$a = new Foo();
+$b = new Bar();
+$a -&gt; exec();
+$b -&gt; exec();
+// this is Foo fun1
+// this is Foo fun2
+// this is Foo fun3
+// this is Bar fun1
+// this is Bar fun2
+// this is Foo fun3
+</code></pre><p>同一个类的不同实例可以互相访问该类的private protected 成员</p>
+<pre><code>&lt;?php
+class test{
+    private $bar = &apos;&apos;;
+    protected $foo = &apos;&apos;;
+    public function __construct($pir,$pro){
+        $this-&gt;bar = $pir;
+        $this-&gt;foo = $pro;
+    }
+    private function abc(){
+        echo &apos;this is private func&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function efg(){
+        echo &apos;this is protected func&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function getProperty(test $obj){
+
+        echo $obj-&gt;bar;
+        echo $obj-&gt;foo;
+        $obj-&gt;abc();
+        $obj-&gt;efg();
+    }
+}
+$a = new test(&apos;test &apos;,&apos;1&apos;);
+$a-&gt;getProperty(new test(&apos;test &apos;,&apos;2&apos;));
+// 输出 
+// test 2
+// this is private func
+//this is protected func
+</code></pre><blockquote>
+<p>demo</p>
+</blockquote>
+<p>一歪果仁认为简单的设置对象的类属性$newObj-&gt;property=1; 和简单的获取类属性是不对的,因为你不知道这个类属性是怎么定义的,你可以给类属性任意的值 ,所以他建议用以下这种写法,其实我觉得多此一举,我觉得别的强类型和纯面向对象语言都是这么干的:</p>
+<pre><code>&lt;?php
+class test{
+    protected $name = &apos;undefined&apos;;
+    protected $money = 0.00;
+
+    public function getName(){
+        return $this-&gt;name;
+    }
+    public function getMoney(){
+        return $this-&gt;money;
+    }
+    public function setName($name){
+        if(is_string($name)){
+            $this-&gt;name = strval($name);
+        }
+    }
+    public function setMoney($money){
+        if(is_numeric($money)){
+            $this-&gt;money = floatval($money);
+        }
+    }
+}
+$a = new test();
+$a-&gt;setName(1);
+$a-&gt;setMoney(&apos;abc&apos;);
+echo $a-&gt;getName();
+echo $a-&gt;getMoney();
+// 输出  undefined 0
+$a-&gt;setName(&apos;lilei&apos;);
+$a-&gt;setMoney(250);
+echo $a-&gt;getName();
+echo $a-&gt;getMoney();
+// 输出  lilei250
+</code></pre><p>上面这个例子如果不这么写的话 其实是不需要那四个 function 的</p>
+<p>可以一次声明多个类属性</p>
+<pre><code>    &lt;?php
+class test{
+    public $a = 1,$b = 2;
+    protected $c = 3, $d = 4;
+    private $e = 5,$f = 6;
+    function getPro(){
+        echo $this-&gt;c,$this-&gt;d;
+    }
+    function getPri(){
+        echo $this-&gt;e,$this-&gt;f;
+    }
+}
+$a = new test();
+echo $a-&gt;a,$a-&gt;b;
+$a-&gt;getPro();
+$a-&gt;getPri();
+// 输出  123456
+</code></pre><p>同类不同实例互相访问时,可以像之前那种写法function test( class $varibies) 也可以直接传对象</p>
+<pre><code>    &lt;?php
+class test{
+    protected function foo(){
+        echo &apos;pro&apos;;
+    }
+    private function foo1(){
+        echo &apos;pri&apos;;
+    }
+    static function exec($a){
+        $a-&gt;foo();
+    }
+    function exec1($a){
+        $a-&gt;foo1();
+    }
+}
+$a = new test();
+$a-&gt;exec($a);//pro
+$a-&gt;exec1($a);//pri
+</code></pre><p>这个例子主要是说明父类不能调用子类的 private 方法,这个东西不需要太复杂就没改直接 copy 的</p>
+<pre><code>    &lt;?php
+
+class ParentClass {
+
+    public function execute($method) {
+        $this-&gt;$method();
+    }
+
+}
+
+class ChildClass extends ParentClass {
+
+    private function privateMethod() {
+        echo &quot;hi, i&apos;m private&quot;;
+    }
+
+    protected function protectedMethod() {
+        echo &quot;hi, i&apos;m protected&quot;;
+    }
+
+}
+
+$object = new ChildClass();
+
+$object-&gt;execute(&apos;protectedMethod&apos;);
+
+$object-&gt;execute(&apos;privateMethod&apos;);
+//输出
+//    hi, i&apos;m protected
+//Fatal error: Call to private method ChildClass::privateMethod() from context &apos;ParentClass&apos; in index.php on line 6
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/31/回调类型/" rel="next" title="回调类型">
+                <i class="fa fa-chevron-left"></i> 回调类型
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/08/类和对象-继承/" rel="prev" title="类和对象-继承">
+                类和对象-继承 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/07/类和对象-访问控制/"
+           data-title="访问控制" data-url="http://yoursite.com/2016/04/07/类和对象-访问控制/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="uploads/touxiang.jpeg"
+               alt="秋哥" />
+          <p class="site-author-name" itemprop="name">秋哥</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">秋哥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gbq"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
