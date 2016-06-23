@@ -88,7 +88,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/20/类和对象-重载/index.html">
 <meta property="og:site_name" content="中二病也要写代码">
 <meta property="og:description" content="php 是动态的创建 类属性和方法,是通过魔术方法实现">
-<meta property="og:updated_time" content="2016-04-23T07:09:00.000Z">
+<meta property="og:updated_time" content="2016-06-23T09:58:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="类和对象-重载">
 <meta name="twitter:description" content="php 是动态的创建 类属性和方法,是通过魔术方法实现">
@@ -308,7 +308,7 @@
       
         <p>php 是动态的创建 类属性和方法,是通过魔术方法实现</p>
 <a id="more"></a>
-<p>当调用当前环境下,未定义或者 不可见的类属性或方式时,从在方法(<strong>set,</strong>get__call)会被调用,</p>
+<p>当调用当前环境下,未定义或者 不可见的类属性或方法时,重载方法(<strong>set,</strong>get__call)会被调用,</p>
 <p>所有的重载方法必须被声明为 public </p>
 <p>重载方法不能通过引用传递</p>
 <blockquote>
@@ -324,7 +324,7 @@ class test{
         $this-&gt;arr[$name] = $value;
     }
     public function __get($name){
-        echo &quot;getting $name &lt;/br&gt;&quot;;
+        echo &quot;getting $name &lt;/br&gt;&quot;; 
         if(array_key_exists($name, $this-&gt;arr)){
             return $this-&gt;arr[$name];
         }
@@ -338,10 +338,10 @@ class test{
         echo &quot;is $name set? &lt;/br&gt;&quot;;
         return isset($this-&gt;arr[$name]);
     }
-    public function __unset($name){
-        echo &quot;unsetting $name &lt;/br&gt;&quot;;
-        unset($this-&gt;arr[$name]);
-    }
+    // public function __unset($name){
+    //     echo &quot;unsetting $name &lt;/br&gt;&quot;;
+    //     unset($this-&gt;arr[$name]);
+    // }
     public function getHidden(){
         return $this-&gt;hidden;
     }
@@ -360,7 +360,9 @@ echo $t-&gt;declared.&quot;&lt;/br&gt;&quot;;
 echo $t-&gt;getHidden();
 
 echo $t-&gt;hidden;
+
 //输出
+
 // setting notHave to notHave 
 // getting notHave 
 // notHave
@@ -373,22 +375,36 @@ echo $t-&gt;hidden;
 // this is hidden properygetting hidden 
 // Notice: undefined property hidden in /Users/guanbingqiu/www/test.php on line 46 
 // ,E_USER_NOTICE in /Users/name/www/test.php on line 18
+
+$t-&gt;otherNotHave = &apos;the other not have&apos;;
+var_dump(isset($t-&gt;declared));//true
+var_dump($t-&gt;otherNotHave);//the other not have 
+var_dump(isset($t-&gt;otherNotHave));//true 
+$t-&gt;otherNotHave = &apos;change the other not have&apos;;
+var_dump($t-&gt;otherNotHave);
+$t-&gt;declared = &apos;change can\&apos;t overwrite&apos;;
+var_dump($t-&gt;declared);//change can\&apos;t overwrite&apos;
+$t-&gt;declared = 1;
+var_dump($t-&gt;declared);//1
+unset($t-&gt;declared);
+var_dump($t-&gt;declared);//报错: notice undifined property declared 并输出:null
+var_dump(isset($t-&gt;declared));//false
 </code></pre><blockquote>
 <p>方法的重载,<strong>call,如果是静态的调用就用</strong>callStatic</p>
 </blockquote>
-<pre><code>&lt;?php
+<pre><code>n&lt;?php
 class test{
     public function __call($name,$arguments){
         $this-&gt;$name($arguments);
     }    
     public static function __callStatic($name,$arguments){
-        static::staticFunc($arguments);
+        static::staticFunc($name,$arguments);
     }
     private function func($arg){
         var_dump($arg);
     }
-    private static function staticFunc($arg){
-        var_dump($arg);
+    private static function staticFunc($name,$arg){
+        var_dump($name,$arg);
     }
 }
 $t = new test();
@@ -398,6 +414,7 @@ test::staticFunc(&apos;c&apos;,&apos;d&apos;);
 // array (size=2)
 //   0 =&gt; string &apos;a&apos; (length=1)
 //   1 =&gt; string &apos;b&apos; (length=1)
+// string &apos;staticFunc&apos; (length=10)
 // array (size=2)
 //   0 =&gt; string &apos;c&apos; (length=1)
 //   1 =&gt; string &apos;d&apos; (length=1)
@@ -506,7 +523,7 @@ test::staticFunc(&apos;c&apos;,&apos;d&apos;);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
