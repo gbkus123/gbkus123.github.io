@@ -311,61 +311,13 @@
 
       
         
-          
-            <blockquote>
-<p>1.语句 和 表达式</p>
-</blockquote>
-<p>语句是为了完成某种任务的操作,一般情况下一条语句不需要返回值,比如下面就是一条赋值语句</p>
-<pre><code>var a;
-</code></pre><p>语句以<code>;</code>为结尾,而<code>;</code>之前可以没有任何内容,javascript 将其视为空语句,可以这么写,但不推荐:</p>
-<pre><code>;;;
-</code></pre><p>表达式是一条期望得到值得语句,一条语句可以有多条表达式,这是一条有表达式的语句:</p>
-<pre><code>var a = 123-122;
-</code></pre><p>而表达式本身 不需要<code>;</code>结尾,因为如果添加了分号, javascript 引擎会把它视为语句,但他仅有返回值,没有任何操作 没有任何意义</p>
-<pre><code>//一下语句虽然经过计算,但无意义
-1+2;
-&apos;abc&apos;+&apos;d&apos;;
-</code></pre><blockquote>
-<p>2.变量</p>
-</blockquote>
-<p>变量是对值得引用,使用变量等于引用一个值,每一个变量都需要一个变量名;</p>
-<p>声明变量用<code>var</code></p>
-<p>声明和赋值是两个步骤:</p>
-<pre><code>var a = 1;
-//其实是首先先创建一个变量
-var a;
-//然后在变量和a 和数值1之间建立引用关系
-a = 1;
-</code></pre><p>如果声明一个变量没有赋值那么,这个变量的值是不存在的, js 用undefined 表示</p>
-<pre><code>//在浏览器的console 中如果,输入 var a;
-var a;
-//console 中会直接返回undefined
-</code></pre><p>可以一次声明多个变量,用<code>,</code>分隔</p>
-<pre><code>var a ,b;
-var a =1 ,b=2;
-</code></pre><p>javascript 和 Php 一样都是动态语言, 变量没有类型限制:</p>
-<pre><code>var a =1;
-a = {1:1};
-a=&apos;a&apos;;
-</code></pre><p>重新声明一个变量是无效的(不会报错),但重新声明时可以赋值并覆盖之前变量的值,不推荐这么写</p>
-<pre><code>var  a = 1;
-var a; //无效
-var a = 2;//a等于2 不推荐 , 正常写法: a = 2;
-</code></pre><blockquote>
-<p>3.变量提升</p>
-</blockquote>
-<p>javascript 引擎的工作方式,先解析代码,并获取所有声明变量的语句,相当于把所有变量的声明都提升到代码的头部,这就是变量提升,变量提升只对<code>var</code>声明的有效, 如果声明一个新变量不用<code>var</code>,是会报错的,比如:<code>new = 1;</code>这种写法不适用于声明变量,但可以作为对象的属性赋值</p>
-<pre><code>console.log(gg);
-var gg = 1; 
-//显示 undefined,这是因为实际运行的代码是:
-//var gg;
-//console.log(gg);
-//gg = 1;
-</code></pre><blockquote>
-<p>1.4标识符</p>
-</blockquote>
-
-          
+          <blockquote>
+<p>1.语句 和 表达式<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/03/js语法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
