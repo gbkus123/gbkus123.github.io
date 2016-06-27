@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="中二病也要写代码">
 <meta property="og:description" content="范围解析操作符 ,就是两个冒号
 可以用来访问静态成员 类常量">
-<meta property="og:updated_time" content="2016-05-19T04:32:20.000Z">
+<meta property="og:updated_time" content="2016-06-27T09:39:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="范围解析操作符`::`">
 <meta name="twitter:description" content="范围解析操作符 ,就是两个冒号
@@ -383,9 +383,45 @@ $c-&gt;myfunc();
 // this is parent&apos;s constucrt
 // this is child&apos;s constucrt
 </code></pre><blockquote>
-<p>重载和魔术方法</p>
+<p>重载 和 魔术方法</p>
 </blockquote>
+<pre><code> &lt;?php
+class parentClass{
+    public $arr = [];
+    public function __set($name,$value){
+            echo &apos;this is the parent\&apos;s __set&apos;;
+            $this -&gt; arr[$name] = $value;
+            var_dump($this-&gt;arr);
 
+    }
+}
+class child extends parentClass{
+    public function __set($name,$value){
+        echo &apos;this is child\&apos;s __set&apos;;
+          $this -&gt; arr[$name] = $value;
+            var_dump($this-&gt;arr);
+
+    }
+
+}
+$c = new child();
+$c-&gt;A = 1;
+//结果
+// this is child&apos;s __set
+ //array (size=1)
+//&apos;A&apos; =&gt; int 1
+class child2 extends parentClass{
+    public function __set($name,$value){
+        parent::__set($name,$value);
+    }
+}
+$c2 = new child2();
+$c2-&gt;a = 2;
+//结果
+// this is the parent&apos;s __set
+//array (size=1)
+//&apos;a&apos; =&gt; int 2
+</code></pre>
       
     </div>
     
