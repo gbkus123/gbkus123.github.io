@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="1.语句 和 表达式">
+<meta name="description" content="回调类型:一些函数 可以接受用户自定义的函数 对象的方法(包括静态方法)作为参数   传递   php 函数在传递时 函数名以 string 传递,包括内置和用户自定义函数,但不包括语言结构   实例化后的对象,例如:$a=new a()在传递时,要传递一个[0=&amp;gt;$a,1=&amp;gt;方法名]的数组,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 语法">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/js语法/index.html">
+<meta property="og:title" content="回调类型">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/回调类型/index.html">
 <meta property="og:site_name" content="中二病也要写代码">
-<meta property="og:description" content="1.语句 和 表达式">
+<meta property="og:description" content="回调类型:一些函数 可以接受用户自定义的函数 对象的方法(包括静态方法)作为参数   传递   php 函数在传递时 函数名以 string 传递,包括内置和用户自定义函数,但不包括语言结构   实例化后的对象,例如:$a=new a()在传递时,要传递一个[0=&amp;gt;$a,1=&amp;gt;方法名]的数组,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T12:44:58.884Z">
+<meta property="og:updated_time" content="2018-11-22T12:44:58.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 语法">
-<meta name="twitter:description" content="1.语句 和 表达式">
+<meta name="twitter:title" content="回调类型">
+<meta name="twitter:description" content="回调类型:一些函数 可以接受用户自定义的函数 对象的方法(包括静态方法)作为参数   传递   php 函数在传递时 函数名以 string 传递,包括内置和用户自定义函数,但不包括语言结构   实例化后的对象,例如:$a=new a()在传递时,要传递一个[0=&amp;gt;$a,1=&amp;gt;方法名]的数组,">
 
 
 
@@ -110,7 +110,7 @@
   };
 </script>
 
-  <title> javascript 语法 | 中二病也要写代码 </title>
+  <title> 回调类型 | 中二病也要写代码 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
             
             
               
-                javascript 语法
+                回调类型
               
             
           </h1>
@@ -283,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/11/22/js语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/js语法/" itemprop="commentsCount"></span>
+                <a href="/2018/11/22/回调类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/回调类型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,117 +307,204 @@
       
 
       
-        <blockquote>
-<p>1.语句 和 表达式<br><a id="more"></a></p>
+        <p>回调类型:一些函数 可以接受用户自定义的函数 对象的方法(包括静态方法)作为参数 </p>
+<blockquote>
+<p>传递</p>
 </blockquote>
-<p>2018年11月22日20:17:16<br>语句是为了完成某种任务的操作,一般情况下一条语句不需要返回值,比如下面就是一条赋值语句</p>
-<pre><code>var a;
-</code></pre><p>语句以<code>;</code>为结尾,而<code>;</code>之前可以没有任何内容,javascript 将其视为空语句,可以这么写,但不推荐:</p>
-<pre><code>;;;
-</code></pre><p>表达式是一条期望得到值得语句,一条语句可以有多条表达式,这是一条有表达式的语句:</p>
-<pre><code>var a = 123-122;
-</code></pre><p>而表达式本身 不需要<code>;</code>结尾,因为如果添加了分号, javascript 引擎会把它视为语句,但他仅有返回值,没有任何操作 没有任何意义</p>
-<pre><code>//一下语句虽然经过计算,但无意义
-1+2;
-&apos;abc&apos;+&apos;d&apos;;
-</code></pre><blockquote>
-<p>2.变量</p>
-</blockquote>
-<p>变量是对值得引用,使用变量等于引用一个值,每一个变量都需要一个变量名;</p>
-<p>声明变量用<code>var</code></p>
-<p>声明和赋值是两个步骤:</p>
-<pre><code>var a = 1;
-//其实是首先先创建一个变量
-var a;
-//然后在变量和a 和数值1之间建立引用关系
-a = 1;
-</code></pre><p>如果声明一个变量没有赋值那么,这个变量的值是不存在的, js 用undefined 表示</p>
-<pre><code>//在浏览器的console 中如果,输入 var a;
-var a;
-//console 中会直接返回undefined
-</code></pre><p>可以一次声明多个变量,用<code>,</code>分隔</p>
-<pre><code>var a ,b;
-var a =1 ,b=2;
-</code></pre><p>javascript 和 Php 一样都是动态语言, 变量没有类型限制:</p>
-<pre><code>var a =1;
-a = {1:1};
-a=&apos;a&apos;;
-</code></pre><p>重新声明一个变量是无效的(不会报错),但重新声明时可以赋值并覆盖之前变量的值,不推荐这么写</p>
-<pre><code>var  a = 1;
-var a; //无效
-var a = 2;//a等于2 不推荐 , 正常写法: a = 2;
-</code></pre><blockquote>
-<p>3.变量提升</p>
-</blockquote>
-<p>javascript 引擎的工作方式,先解析代码,并获取所有声明变量的语句,相当于把所有变量的声明都提升到代码的头部,这就是变量提升,变量提升只对<code>var</code>声明的有效, 如果声明一个新变量不用<code>var</code>,是会报错的,比如:<code>new = 1;</code>这种写法不适用于声明变量,但可以作为对象的属性赋值</p>
-<pre><code>console.log(gg);
-var gg = 1; 
-//显示 undefined,这是因为实际运行的代码是:
-//var gg;
-//console.log(gg);
-//gg = 1;
-</code></pre><blockquote>
-<p>1.4标识符</p>
-</blockquote>
-<p>标识符标识符就是个名字,用来识别不同对象,可以理解为变量名和函数名.js 的标识符大小写敏感, a 和 A ,a()和A()都是不同的变量和函数</p>
-<p>标识符有明确的命名规则,不符合规则js 解释引擎就会报错:</p>
-<p>第一个字符，可以是任意Unicode字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。</p>
-<p>第二个字符及后面的字符，除了Unicode字母、美元符号和下划线，还可以用数字0-9。</p>
-<pre><code>var _a = 1;
-var $_1 =1;
-var _1 = 1;
-var $1 = 1;
-var a1 = 1;
-var $a = 1;
-var _a = 1;
-var a_$1 = 1;
-var π =1 ;    
-var 中文 = 1;
-var ##qwe =1; //报错
-var 1 = 1;//报错
-var a-1 = 1;//报错
-</code></pre><blockquote>
-<p>1.5 注释</p>
-</blockquote>
-<p>单行注释<code>//这是单行注释</code></p>
-<p>多行注释</p>
-<pre><code>/*
-这是多行注释
-.
-.
-.
-*/
-</code></pre><blockquote>
-<p>1.6 区块 这就是区块:</p>
-</blockquote>
-<pre><code>{
-//我在区块里面
+<p> php 函数在传递时 函数名以 string 传递,包括内置和用户自定义函数,但不包括语言结构 </p>
+<p> 实例化后的对象,例如:<code>$a=new a()</code>在传递时,要传递一个<code>[0=&gt;$a,1=&gt;方法名]</code>的数组,</p>
+ <a id="more"></a>
+<p> 静态的方法可以不经过实例化该类,有两种方法:</p>
+<p> 1:数组<code>[0=&gt;类名,1=&gt;方法名+]]</code></p>
+<p> 2:一个参数 class::functionname</p>
+<pre><code> &lt;?php 
+class B{
+    public function __construct(){
+        $name=func_get_args();
+        $i=func_num_args();
+        if(method_exists($this,&apos;arguments&apos;.$i)){
+            call_user_func_array([$this,&apos;arguments&apos;.$i],$name);
+        }else{
+            call_user_func(&apos;self::noFunc&apos;,&apos;not have this func&apos;);
+        }
+    }
+    static public function noFunc($a){
+        echo $a;
+    }
+    public function arguments1($a){
+        echo $a;
+    }
+    public function arguments2($a,$b){
+        echo $a.$b;
+    }
+    public function arguments3($a,$b,$c){
+        echo $a.$b.$c;
+    }
 }
-</code></pre><p>js 中的区块在单独使用时并不是一个单独的作用域    , 区块内外是同一作用域 , 可以理解为没有代码隔离, </p>
-<p>但是区块是用来构成更复杂的语法结构  <code>for , while foreach  function</code></p>
-<pre><code>{
-
-    var a = 1;
-}
-if(a ==  1){
-
-     var b = 1 ;
-}
+new B(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;);//输出 not have this func
+new B(&apos;a&apos;);//输出 a
+new B(&apos;a&apos;,&apos;b&apos;);//输出 ab 
+new B(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;);//输出 abc
+</code></pre><blockquote>
+<p>各种传递方式:</p>
+</blockquote>
+<pre><code> &lt;?php 
 function test(){
-    var c = 1;
+    echo &apos;this is test func&apos;.&quot;&lt;/br&gt;&quot;;
 }
-console.log(a);//1
-console.log(b);//1
-console.log(c);//Uncaught ReferenceError: c is not defined
-</code></pre><blockquote>
-<p>2条件语句<br>js 提供 js 和 swith</p>
-<p>2.1 if结构</p>
-</blockquote>
-<p>if判断为 true 之后如果只需要执行一条语句,不需要大括号:</p>
-<pre><code>var a = 1;
-if(1 == a)console.log(a);//输出1
-</code></pre><p>多条语句 就要加大括号<code>{}</code><br>_</p>
+class  myclass{
+    public function my1($a){
+        echo $a.&quot;&lt;/br&gt;&quot;;
+    }
+    static public function my2($a,$b){
+        echo $a.$b.&quot;&lt;/br&gt;&quot;;
+    }
+}
+class other extends  myclass{
+    static public function my2($a,$b){
+        echo &apos;this is other my2&apos;;
+    }
+}
 
+//不在类中的函数,直接写方法名字
+call_user_func(&apos;test&apos;);//this is test func 
+
+$m = new myclass();
+$n = new other();
+
+//第一种方式第一个参数是数组对象和方法名,后面加参数
+call_user_func([$m,&apos;my1&apos;],&apos;this is my1 func&apos;);//this is my1 func
+
+//静态方法第一个数组参数是类名和方法名
+call_user_func_array([&apos;myclass&apos;,&apos;my2&apos;],[&apos;this is &apos;,&apos;my2 func&apos;]);//this is my2 func
+
+//静态方法可以写作正常调用静态方法的方式来写
+call_user_func_array(&apos;myclass::my2&apos;,[&apos;this is &apos;,&apos;my2 func&apos;]);//this is my2 func 
+
+//子类可以正常调用父类费静态方法
+call_user_func([$n,&apos;my1&apos;],&apos;this is other func&apos;);//this is other func 
+
+//子类亦可以用调用父类静态方法的方式来写
+call_user_func_array([&apos;other&apos;,&apos;parent::my2&apos;],[&apos;this is &apos;,&apos;other func&apos;]);//this is other func 
+
+//这种方式是会报错的 ,我以为会有效
+// call_user_func_array([&apos;other::my2&apos;],[&apos;this is &apos;,&apos;my2 func&apos;]);
+</code></pre><blockquote>
+<p>使用 匿名函数 closeusr:</p>
+</blockquote>
+<pre><code>&lt;?php
+$func1 = function($a){
+    echo &apos;this is func&apos;.$a.&quot;&lt;/br&gt;&quot;;
+};
+$func1(&apos;1&apos;);//this is func1
+call_user_func($func1,2);//this is func2
+$arrayAdd = function($a){
+      return ++$a;
+};
+$arr = range(1,10);
+$newArr = array_map($arrayAdd,$arr);
+echo implode(&apos;  &apos;,$newArr);//2 3 4 5 6 7 8 9 10 11
+</code></pre><blockquote>
+<p>如果一个回调函数有异常没有被 catch ,并且在这个回调函数的后面还有别的回调,那么后面的回调函数不会被执行</p>
+</blockquote>
+<pre><code>&lt;?php
+function func1(){
+    throw new Exception(&apos;this is exception&apos;);
+
+}
+function func2(){
+    echo &apos;this is func2&apos;;
+}
+class test{
+    public function __construct(){
+        try{
+            call_user_func(&apos;func1&apos;);
+        }catch(Exception $e){
+            echo $e-&gt;getMessage();
+        }
+        call_user_func(&apos;func2&apos;);
+    }
+}
+new test();
+</code></pre><blockquote>
+<p>demo</p>
+</blockquote>
+<p>一个绕来绕去的 demo</p>
+<pre><code>&lt;?php
+class A{
+    static public function fromHere(){
+        B::crossHere(self::doHere);
+    }
+    static public function doHere(){
+        echo &apos;success&apos;;
+    }
+}
+class B{
+    static public function crossHere(callable $callName){
+        call_user_func($callName);
+    }
+}
+A::fromHere();
+// Fatal error: Undefined class constant &apos;doHere&apos;
+//找不到 doHere 方法,就是说 self::doHere 并不是先找到 doHere 方法然后传过去 
+//而是先传过去再去找,self::doHere,并且如果被self::doHere被字符串包起来会报不是回调类型的错误    
+//将第四行改为B::crossHere(&apos;A::doHere&apos;);B::crossHere([&apos;A&apos;,&apos;doHere&apos;]); 会正常执行 doHere
+</code></pre><p>私有函数可以在类内作为回调函数,在类外不行 可是这又有什么用呢,谁不知道啊 ,不知道为什么在官网还有180个赞同</p>
+<pre><code>&lt;?php
+class test{
+    private function arrayWalk($val,$k,$userData){
+        echo $userData.$k.&apos;=&gt;&apos;.$val.&apos;&lt;/br&gt;&apos;;
+    }
+    public function inside(){
+        $arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;,&apos;f&apos;];
+        array_walk($arr,[$this,&apos;arrayWalk&apos;],&apos;this is  &apos;);
+    }
+    public function outside(){
+        return [$this,&apos;arrayWalk&apos;];
+    }
+}
+$t = new test();
+$t-&gt;inside();
+//输出this is 0=&gt;a
+//this is 1=&gt;b
+//this is 2=&gt;c
+//this is 3=&gt;d
+//this is 4=&gt;e
+//this is 5=&gt;f
+$f = $t-&gt;outside();
+call_user_func($f);//报错
+//Warning: call_user_func() expects parameter 1 to be a valid callback, cannot access private method test::arrayWalk()
+</code></pre><p>可以使用伪变量$this</p>
+<pre><code>    &lt;?php
+class test{
+    public $abc = &apos;abc&apos;;
+    public function myCallBack(){
+        call_user_func([$this,&apos;mymethod&apos;]);
+    }
+    public function mymethod(){
+        echo $this-&gt;abc;
+    }
+}
+(new test())-&gt;myCallBack();
+//输出 abc
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+class test{
+    public static function callFunc(callable $c){
+        $c();
+    }
+    public function callFunc2(callable $c){
+        call_user_func($c);
+    }
+    public static function beCalled(){
+        echo &apos;success&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+// test::callFunc(&apos;test::beCalled&apos;);//fatal error,未定义 beCalled 方法不
+test::callFunc([&apos;test&apos;,&apos;beCalled&apos;]);//success
+test::callFunc2(&apos;test::beCalled&apos;);//success 和 一个静态方法需要被静态调用
+test::callFunc2([&apos;test&apos;,&apos;beCalled&apos;]);//success 和一个静态方法需要被静态调用
+</code></pre>
       
     </div>
     
@@ -440,16 +527,16 @@ if(1 == a)console.log(a);//输出1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/22/类和对象-构造和析构函数/" rel="next" title="类和对象-构造函数和析构函数">
-                <i class="fa fa-chevron-left"></i> 类和对象-构造函数和析构函数
+              <a href="/2018/11/22/雷和对象-常量/" rel="next" title="类和对象-类常量">
+                <i class="fa fa-chevron-left"></i> 类和对象-类常量
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/22/类和对象-访问控制/" rel="prev" title="访问控制">
-                访问控制 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/22/类和对象-重载/" rel="prev" title="类和对象-重载">
+                类和对象-重载 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -476,7 +563,7 @@ if(1 == a)console.log(a);//输出1
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/11/22/js语法/" data-title="javascript 语法" data-url="http://yoursite.com/2018/11/22/js语法/">
+      <div class="ds-thread" data-thread-key="2018/11/22/回调类型/" data-title="回调类型" data-url="http://yoursite.com/2018/11/22/回调类型/">
       </div>
     
   </div>

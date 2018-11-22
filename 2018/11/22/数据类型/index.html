@@ -1,0 +1,1010 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="HhuxpGlFJmrhEk8QDTIW7hJqGd8eJvAv88fs8L9X_ZY">
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="###1.标量类型  ###1.布尔型boolean">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php类型">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/数据类型/index.html">
+<meta property="og:site_name" content="中二病也要写代码">
+<meta property="og:description" content="###1.标量类型  ###1.布尔型boolean">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-22T12:44:58.870Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php类型">
+<meta name="twitter:description" content="###1.标量类型  ###1.布尔型boolean">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> php类型 | 中二病也要写代码 </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?43fcc61fac5355f89b96342f4f1972c1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">中二病也要写代码</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                php类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-11-22T20:44:58+08:00" content="2018-11-22">
+              2018-11-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/11/22/数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/数据类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###1.标量类型</p>
+<blockquote>
+<p>###1.布尔型boolean</p>
+</blockquote>
+<a id="more"></a>
+<p>#####关键字TURE FALSE</p>
+<blockquote>
+<p>以下数值在判断时会被转换为FALSE：FALSE,0,0.0,””,”0”,    [],NULL,不包含成员变量的对象(空object),空标记(类似：<code>&lt;a&gt;&lt;/a&gt;</code>)生成的SimpleXML对象</p>
+</blockquote>
+<p>#####例子：<br>    &lt;?php<br>        $x=TRUE;<br>        $y=FALSE;<br>        $z=$x &amp;&amp; $y;<br>        //此时$z 为false 因为&amp;&amp;优先级大于 = 所以先计算 $x和$y的与运算，其中一个为False 结果为false  ,然后false赋值给$z<br>        $z=$x and $y;<br>        //此时$z=true,因为 = 的优先级大于 and 所以 执行顺序是 $x值给$z ，而之后和$y的and值无人接收 ，可以看下面的代码<br>        $res=($z=$x and $y);<br>        //此时$res=false,同理下面一段代码：</p>
+<blockquote>
+<p>我要把尼萌割开</p>
+</blockquote>
+<pre><code>&lt;?php 
+$x=TRUE;
+$y=FALSE;
+$z=$x &amp;&amp; $y; //$z=false 
+$z1=$x and $y;//$z1=true
+$z2=$y &amp;&amp; $x;//$z2=false
+$z3=$y and $x;//$z3=false
+$a=$x or $y;//$a=true
+$a1=$x || $y;//$a1=true
+$a2=$y or $x;//$a2=false
+$a3=$y || $x;//$a3=true
+</code></pre><hr>
+<blockquote>
+<p>###2.整形int</p>
+</blockquote>
+<p>整形可以是十，十六，八，二进制的数，可以在前面加上+ 或 -<br>整形的值如果超出了整形的长度范围（32位系统和64系统位长度不同），会自动转换为float。</p>
+<pre><code>&lt;?php 
+    $a=25/7;
+    var_dump($a);//float 3.57142857143
+    var_dump((int)$a);//3,强转舍弃小数
+    var_dump(intval($a));//3，强转舍弃小数 Intval函数可加第二个参数，来制定转换的进制
+    var_dump(round($a));//4，//round 为四舍五入，3.57....四舍五入向上取整
+</code></pre><p>其他类型转换为整形：<br>    从boolean转化为整形时，false-&gt;0, true-&gt;1<br>    从string转换为整形时，如果字符串以合法的数值开始则使用该数值，否则转换的值为0<br>    从浮点类型转化为整形时，向下取整，Php浮点数精度有限，在数学运算中会带来很大误差，官网中有一段代码：</p>
+<pre><code>&lt;?php
+    $a=0.1;
+    $b=0.7;
+    echo intval(($a+$b)*10);
+    //结果是7 而不是想象中的8，官网上说计算的结果在内部表示为7.9999999999999991118...
+    //我也不懂为什么，因为如果把$b换成0.8的话，就能得出正确结果9
+    //php提供了更高精度的数学函数：BC数学函数和gmp函数
+    //总而言之浮点数不要直接比较或者运算，
+    //还有一段
+&lt;?php 
+    $num=19.99;
+    var_dump(gettype($num));//获取类型double
+    var_dump($num*100);//浮点数乘100 为float1999
+    var_dump(intval($num*100));//浮点数1999获取整数数值，为1998,丢失精度
+    var_dump(intval(strval($num)*100));//首先strval得到string &apos;19.99&apos; 
+    //再和100相乘的时候，自动转换为float19.99在乘100后得到与上面一样的结果
+    var_dump(intval(strval($num*100)));//结果为int 1999 .首先浮点数乘100得到float 1999 ，
+    //然后转化为string &apos;1999&apos;,在之后获取string &apos;1999&apos;的整数值的时候没有丢失精度？得到结果为int 1999
+</code></pre><p>一段使用Int的方式存储ip和取出ip的方法</p>
+<pre><code>&lt;?php 
+$ipArr = explode(&apos;.&apos;,&apos;12.12.34.23&apos;);
+$ip = $ipArr[0]*0x1000000//16进制数转化为10进制 （intval(0x1000000,10)）为256的立方
+    +$ipArr[1]*0x10000//256的平方
+    +$ipArr[2]*0x100//256
+    +$ipArr[3];
+    //也可以用这种简单的写法
+    //$ip = ($ipArr[0]&lt;&lt;24)
+    //+($ipArr[1]&lt;&lt;16)
+    //+($ipArr[2]&lt;&lt;8)
+    //+$ipArr[3];
+//    echo $ip.&quot;&lt;/br&gt;&quot;;
+echo $ip.&quot;&lt;/br&gt;&quot;;
+
+$ipVal = $ip;
+$ipArr = array(0 =&gt;floor($ipVal/0x1000000) );
+$ipVint   = $ipVal-($ipArr[0]*0x1000000); // for clarity
+$ipArr[1] = ($ipVint &amp; 0xFF0000)  &gt;&gt; 16;
+$ipArr[2] = ($ipVint &amp; 0xFF00  )  &gt;&gt; 8;
+$ipArr[3] =  $ipVint &amp; 0xFF;
+$ipDotted = implode(&apos;.&apos;, $ipArr);
+echo $ipDotted;
+</code></pre><hr>
+<blockquote>
+<p>###3.浮点型</p>
+</blockquote>
+<p>#####浮点数在php中叫float 也叫 double 也可以叫 real ，这一点很蛋疼，但是他们三个确实是没有区别的，比如：</p>
+<pre><code>&lt;?php
+    $a=1.1;
+    printf(gettype($a));
+    var_dump($a);
+    //结果是：
+    //double
+    //float(1.1)
+    //so,choose the one you like 
+</code></pre><p>#####浮点数的长度和凭他相关，通常最大值是 1.8e308 并具有 14 位十进制数字的精度</p>
+<p>#####因为浮点数的精度问题，在比较浮点数的时候，会使用一个迂回的方法，就是比较一个极小误差值<br>    &lt;?php<br>        $a=0.17;<br>        $b=1-0.83;<br>        var_dump($a==$b);<br>        var_dump(abs($a-$b)&lt;0.00001);<br>        //第一个vardump为 false 而第二个为true</p>
+<p>#####在确定了想要的小数位之后也可以使用round函数来帮助判断：<br>    &lt;?php<br>    $a=0.17;<br>    $b=1-0.83;<br>    var_dump(round($a,2)==round($b,2));//结果是true,round函数会把第一个参数按照四舍五入，并保留第二个参数长度的小数位数</p>
+<p>#####和Js一样当出现无法正常计算的时候会产生一个NaN的结果，NaN代表着任何不同的值，和任何值包括自身比较都不相等，判断NaN的时候使用  is_nan()函数 </p>
+<hr>
+<blockquote>
+<p>###4.字符串string</p>
+</blockquote>
+<p>#####手册上说一个字符串是由一系列字符组成，其中每一个字符等于一个字节，并且Php只能支持256的字符集，因此不支持Unicode,关于字符集,我看了阮一峰老师的文章<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">ASCII UTF-8 Unicode 之间的联系和区别</a>，但还是没有理解手册的意思，然后看了一位<a href="http://www.cnblogs.com/chenpingzhao/p/4811990.html" target="_blank" rel="noopener">博主的文章</a>,大概对所谓的不支持Unicode有了写了解，简单说就是一些字符串的函数都有一个针对Unicode的加了前缀的函数，比如： mb_substr()，还有一些输出函数需要提供字符集名字的参数。</p>
+<blockquote>
+<p>而另一方面的资料普遍是这样说的：</p>
+</blockquote>
+<pre><code>这只是说，PHP的string类型是array of bytes。
+PHP是可以正常使用Unicode的。我的经验是：
+PHP脚本文件本身使用UTF-8字符集。
+网页使用utf-8编码。
+MySQL数据库使用utf8字符集。
+各类字符串操作使用Multibyte String系列函数。
+</code></pre><blockquote>
+<p>我比较相信的一个结论是：</p>
+</blockquote>
+<p>  <strong>unicode作为字符串 保存起来的只是它的编码 php不解析他就不会出问题</strong></p>
+<blockquote>
+<p>字符串表现形式一：单引号</p>
+</blockquote>
+<p>#####单引号包围的字符串中的变量和转义不会被替换,当然想要在单引号中标示单引号需要用<code>\</code>来转义</p>
+<pre><code>&lt;?php
+    echo &apos;o www  w&apos;.&quot;&lt;br \&gt;&quot;;//o www w
+    echo &apos;123
+    4
+    5
+    67&apos;.&quot;&lt;br \&gt;&quot;;//123 4 5 67
+    echo  &apos;are you &quot;ok\&apos;&quot;&apos;.&quot;&lt;br \&gt;&quot;;//are you &quot;ok&apos;&quot; (ok后面有一个单引号和一个双引号，如果不加\转义会报语法错误)
+    echo &apos;cd C:\*.*?&apos;.&quot;&lt;br \&gt;&quot;;//cd C:\*.*?
+    echo &apos;cd C:\\*.*?&apos;.&quot;&lt;br \&gt;&quot;;//cd C:\*.*?
+    echo &apos;you are \n ok&apos;.&quot;&lt;br \&gt;&quot;;//you are \n ok
+    echo &apos;echo $a&apos;.&quot;&lt;br \&gt;&quot;;//echo $a
+</code></pre><blockquote>
+<p>字符串表现形式之二：双引号</p>
+</blockquote>
+<p>#####双引号中可以解析变量，也是有一些转义字符，举一些常用的例子：</p>
+<pre><code>&lt;?php
+header(&apos;Content-type: text/plain&apos;);//text/plain告诉浏览器是纯文本格式，\n \r等转义字    //符才可以生效否则不生效
+echo &quot;the n \n&quot;;//换行
+echo &quot;the r \r&quot;;//换行
+echo &quot;the dollar \$ \n&quot;;//输出$
+echo &quot;the \\ \n&quot;;//输出\
+echo &quot;the \&quot;\n&quot;;//输出&quot;
+$a=&apos;World&apos;;
+$arr=[&apos;Hello&apos;,&apos;World&apos;];
+echo &quot;Hello $a\n&quot;;//输出 Hello World双引号中可以解析变量中的字符串
+echo &quot;$arr[0] $arr[1]\n&quot;;//输出Hello World 双引号可以解析数组中的value
+    class obj{
+        public $a=&quot;Hello&quot;;
+        public $b=&quot;World&quot;;
+    }
+$obj=new obj;
+echo &quot;$obj-&gt;a $obj-&gt;b&quot;;//输出HelloWorld 双引号中可以解析对象的属性
+</code></pre><blockquote>
+<p>字符串表现形式之三:Heredoc</p>
+</blockquote>
+<p>#####语法：<code>&lt;&lt;&lt;</code>加上一个自定义的标识符，标识符由字符数字下划线组成，字母下划线开头，结束时单独一行以标识符作为结束标志，并且结束标志之前不得有任何东西，这种形式的字符串也可以解析变量和转义序列，详见下面的例子：</p>
+<pre><code>&lt;?php
+header(&apos;Content-type: text/plain&apos;);
+cLass right {
+    protected $foo=&apos;class.var&apos;;
+    protected $fooArr=[&apos;class.arr&apos;];
+    }
+class child_right extends right {
+    function a(){
+         $h=&quot;Hello&quot;;
+         $r=new right();
+        $str=&lt;&lt;&lt;abc
+        $h,World 
+        the &quot;&quot;
+        the &apos;&apos;
+        the \
+        the \\
+        $this-&gt;foo
+        $r-&gt;foo
+        {$this-&gt;fooArr[0]}
+        {$r-&gt;fooArr[0]}
+        parent::foo
+        self::foo
+abc;
+    echo $str;
+    }
+}
+$a=new child_right();
+$a-&gt;a();
+//结果是这样的
+// Hello,World 
+//     the &quot;&quot;
+//     the &apos;&apos;
+//     the \
+//     the \
+//     class.var
+//     class.var
+//     class.arr
+//     class.arr
+//     parent::foo
+//     self::foo
+</code></pre><p>#####Heredoc也可以和正常的<code>&quot;&quot;</code> <code>&#39;&#39;</code>一样作为参数传给函数：<br>    &lt;?php<br>    class one{<br>        function __construct($h,$w){<br>            echo $h.$w;<br>        }<br>    }<br>    class two{<br>        function arr($arr){<br>            echo $arr[0].$arr[1];<br>        }<br>    }<br>    $a =new one(&lt;&lt;<val1 hello,="" val1="" ,<<<val2="" world="" val2="" );="" $b="new" two();="" $b-="">arr([<br>    &lt;&lt;&lt;val1<br>    Hello,<br>    val1<br>    ,&lt;&lt;&lt;val2<br>    World<br>    val2<br>        ]);<br>    //上面的代码会输出两遍Hello,World</val1></p>
+<p>#####Heredoc也可以用来初始化变量,但需要注意的是不能在初始化变量的时候在字符串内加入变量！！<br>    &lt;?php<br>    class demo{<br>        public $str=&lt;&lt;<abc str.text="" abc;="" const="" cstr="<<<EFG" cstr.text="" efg;="" static="" $sstr="<<<HIJ" sstr.text="" hij;="" function="" getsstr(){="" echo="" self::$sstr;="" }="" $d="new" demo();="" $d-="">str.”<br>“;//类的属性<br>    echo demo::cstr.”<br>“;//类的常量<br>    echo demo::$sstr.”<br>“;//类的静态属性<br>    echo demo::getSstr();//类的静态方法<br>    //好吧在开头位置也可以用双引号吧他标识符包起来，虽然我不知道这有什么用也许是为了方便联想<br>    echo $test=&lt;&lt;&lt;”aa”<br>    123<br>    aa;</abc></p>
+<blockquote>
+<p>字符串表现形式之四：Newdoc</p>
+</blockquote>
+<p>#####如果说Heredoc类似于<code>&quot;&quot;</code>那么Newdoc就是类似于<code>&#39;&#39;</code>的，在语法上Newdoc和Heredoc一样需要开始和结束标识符，唯一的不同是Newdoc的开始标识符需要加上单引号：<code>&lt;&lt;&lt;&#39;ABC&#39;</code>,并且它和<code>&#39;&#39;</code>相同的地方还有同样对变量不解析和不会对特殊字符转义:<br>    &lt;?php<br>    $a=1;<br>    class c<br>    {<br>        //Newdoc可以用在各种属性和常量上这和Heredoc不同，毕竟Newdoc不解析变量<br>        public $newdoc=&lt;&lt;&lt;’NEW’<br>        the newdoc text<br>    NEW;<br>        function b()<br>        {<br>            echo ‘b-&gt;b’;<br>        }<br>        function a(){<br>            echo ‘b-&gt;a’;<br>        }<br>    }<br>    $b=new c();<br>    echo &lt;&lt;&lt;’DE’<br>    the \<br>    the $a<br>    the $b-&gt;b();<br>    the C:\<br>    the {$b-&gt;a}<br>    the ‘’<br>    the “”<br>    the \n<br>    DE;<br>    // 输出：<br>    //     the \<br>    //     the $a<br>    //     the $b-&gt;b();<br>    //     the C:\<br>    //     the {$b-&gt;a}<br>    //     the ‘’<br>    //     the “”<br>    //     the \n<br>         ?&gt;</p>
+<blockquote>
+<p>变量解析</p>
+</blockquote>
+<pre><code>&lt;?php
+$arr=[
+    &apos;foo&apos;=&gt;[&apos;foo1&apos;,&apos;foo2&apos;],
+    [&apos;1=&gt;2&apos;]
+];
+$str=&apos;str&apos;;
+echo &quot;{$arr[&apos;foo&apos;][0]}&quot;;//foo1,当要用到带引号的key的时候必须用{}
+echo &quot;{$arr[&apos;foo&apos;][1]}&quot;;//foo2
+echo &quot;{$arr[0][0]}&quot;;//1=&gt;2
+echo &quot;{$str}&quot;//str
+echo &quot;${str}&quot;;//str
+// echo &quot;${arr[&apos;foo&apos;][0]}&quot;;
+//这条会报语法错误，与上一条不同，数组不可以用${}这种写法
+</code></pre><p>调用类的属性</p>
+<pre><code>    &lt;?php
+    class foo {
+        public $bar = &apos;I am bar.&apos;;
+    }
+
+    $foo = new foo();
+    $bar = &apos;bar&apos;;
+    $baz = array(&apos;foo&apos;, &apos;bar&apos;, &apos;baz&apos;, &apos;quux&apos;);
+    echo &quot;{$foo-&gt;$bar}&quot;.&quot;&lt;/br&gt;&quot;;
+    echo &quot;{$foo-&gt;bar}&quot;.&quot;&lt;/br&gt;&quot;;//bar前面写不写这个$感觉是没有区别的
+    echo &quot;{$foo-&gt;$baz[1]}&quot;.&quot;&lt;/br&gt;&quot;;//这个就是先把数组$baz[1]也就是bar表达出来了，就是变成了$foo-&gt;bar了，不是说去找foo的baz属性
+    echo &quot;{\$&quot;;
+    //输出一下内容
+//I am bar.
+//I am bar.
+//I am bar.
+//{$
+    ?&gt;
+</code></pre><p>常量，类的静态变量和类属性的对比</p>
+<pre><code>&lt;?php
+class resolve{
+    const convar=&apos;convar&apos;;
+    public $classarg=&apos;classarg&apos;;
+    public static  $staticarg=&apos;staticarg&apos;;
+}
+$r=new resolve();
+echo resolve::convar;//输出convar
+echo &quot;{${resolve::convar}}&quot;;//这一行会报Notice变量$convar未定义，因为在{}中无法处理类常量
+$convar=123;
+echo &quot;{${resolve::convar}}&quot;;//输出123，声明了 $convar之后,程序可以正常执行，但是只能使用类常量的值来作为变量名字来解析
+echo &quot;$r-&gt;classarg&quot;;//输出classarg
+echo &quot;{$r-&gt;classarg}&quot;;//输出classarg
+echo resolve::$staticarg;//输出staticarg
+echo &quot;${resolve::$staticarg}&quot;;//这里和上面那个Notice是一样的
+echo $staticarg=&apos;staticarg&apos;;
+echo &quot;{${resolve::$staticarg}}&quot;;//输出staticarg 声明了上面那个变量之后，以常量的值来作为变量的名字然后被字符串解析
+?&gt;
+</code></pre><p>存取和修改字符串中的字符,php内部使用字节组成数组来表示字符串，所以可以用Key的方式来访问和修改字符串中的字符，但字符串Key必须为整数（5.4之后）</p>
+<pre><code>&lt;?php 
+$a=&apos;abcdefghijklmn&apos;;
+var_dump(strlen($a));//14
+var_dump($a{0});//a
+var_dump($a[13]);//n
+var_dump($a[strlen($a)-1]);//n
+var_dump($a{strlen($a)-1});//n
+$a=&apos;123456&apos;;
+var_dump($a{0});//1
+var_dump($a[1]);//2
+$a=&quot;我是汉子&quot;;
+var_dump($a{0});//乱码 这种访问字节的方式只能在单字节是使用比如子母和数组，而其他字符一般有2-4个字节
+var_dump($a[1]);//乱码
+$str=&apos;abc&apos;;
+var_dump($str[&apos;1&apos;]);//b
+var_dump(isset($str[&apos;1&apos;]));//true
+
+var_dump($str[&apos;1.0&apos;]);//b,把1.0转成1了所以输出b
+var_dump(isset($str[&apos;1.0&apos;]));//false，但是没有没有Key=1.0(浮点数)这种Key
+
+var_dump($str[&apos;u&apos;]);//u转成0,此处报非法字符串偏移量的waring
+var_dump(isset($str[&apos;u&apos;]));//false 没有u这个key
+
+var_dump($str[&apos;1df&apos;]);//b 也许是因为前面有个1就转成1，此处报了数据结构不对的notice
+var_dump(isset($str[&apos;1df&apos;]));//false
+
+var_dump($str[&apos;2df&apos;]);//c ,也许是因为前面有2就转成2，此处报了和上面一样的notice
+var_dump(isset($str[&apos;2df&apos;]));
+</code></pre><p>转换为字符串类型</p>
+<pre><code>&lt;?php
+//标量类型可以用(string)或者strval()来转为字符串
+//当需要一个字符串的时候php会自动转换 比如echo print 
+class obj{}
+$obj=new obj();
+$int=123;
+$float=1.22;
+$arr=[&apos;123&apos;,123,&apos;abc&apos;];
+$true=true;
+$false=false;
+$resouce=dir(getcwd());//dir函数以oop的形式返回路径和文件资源
+var_dump($resouce);
+var_dump($int+&apos;123&apos;); //int 246
+var_dump($float+&apos;123&apos;);//float 124.22
+// var_dump($arr+&apos;123&apos;);//这里会报fatal error
+var_dump($true+&apos;123&apos;);//int 124
+var_dump($false+&apos;123&apos;);//int 123
+var_dump(strval($float));//string &apos;1.22&apos;
+var_dump(strval($true));//string &apos;1&apos;
+var_dump(strval($false));//string &apos;&apos;(length=0)
+var_dump((string)$false);//string &apos;&apos;(length=0)
+var_dump(strval($arr));//结果是string &apos;Array&apos;,并报一个Notice
+var_dump(strval($int));//strint&apos;123&apos;
+// var_dump(strval($obj));//致命错误
+var_dump(strval($resouce-&gt;handle));//string &apos;Resource id #3&apos; 资源类型转为str会返回一个这种字符串其中`#`后面的数字为Php为该资源分配的id
+//，这种方法不可靠，需要知道资源类型的时候，参考get_resouce_type 方法
+var_dump(strval(null));//string &apos;&apos; (length=0)
+//官网说array object resouce这三种类型只会得到对应的type name，
+</code></pre><p>大部分的php值可以转变为string 来永久保存，这被称作串行化，（序列化）：</p>
+<pre><code>&lt;?php
+$a=&apos;123&apos;;
+var_dump($sa=serialize($a));//string &apos;s:3:&quot;123&quot;;&apos; 序列化
+var_dump(unserialize($sa));//string &apos;123&apos; 反序列化
+</code></pre><p>字符串转换为数值</p>
+<pre><code>&lt;?php
+//字符串中没有`.` `e`,`E`,并且长度在整形的范围之内，该字符串被当做interger来取值，否则是float
+//并且字符串的开始字符如果不是合法的数值则转为0，正负号跟着数字视为合法的数值
+var_dump(1+&apos;10.1&apos;);//float 11.1
+var_dump(1+&apos;-1.4e3&apos;);//float 1399
+var_dump(1+&apos;asb123&apos;);//int 1
+var_dump(1+&apos;123asb&apos;);//int 124
+var_dump(1+&apos;123.1asb&apos;);//float 124.1
+var_dump(1.0+&apos;123asb&apos;);//folat 124
+</code></pre><p>字符类型详解<br>内容挺多的，没详细学习。手册是这么说的：</p>
+<blockquote>
+<p>某些函数假定字符串是以单字节编码的，但并不需要将字节解释为特定的字符。例如 substr()，strpos()，strlen() 和 strcmp()。理解这些函数的另一种方法是它们作用于内存缓冲区，即按照字节和字节下标操作。<br>某些函数被传递入了字符串的编码方式，也可能会假定默认无此信息。例如 htmlentities() 和 mbstring 扩展中的大部分函数。<br>其它函数使用了当前区域（见 setlocale()），但是逐字节操作。例如 strcasecmp()，strtoupper() 和 ucfirst()。这意味着这些函数只能用于单字节编码，而且编码要与区域匹配。例如 strtoupper(“á”) 在区域设定正确并且 á 是单字节编码时会返回 “Á”。如果是用 UTF-8 编码则不会返回正确结果，其结果根据当前区域有可能返回损坏的值。<br>最后一些函数会假定字符串是使用某特定编码的，通常是 UTF-8。intl 扩展和 PCRE（上例中仅在使用了 u 修饰符时）扩展中的大部分函数都是这样。尽管这是由于其特殊用途，utf8_decode() 会假定 UTF-8 编码而 utf8_encode() 会假定 ISO-8859-1 编码。</p>
+</blockquote>
+<pre><code>&lt;?php
+$a=&apos;阿布&apos;;
+echo substr($a, 1).&quot;&lt;/br&gt;&quot;;//��布
+echo mb_substr($a, 1).&quot;&lt;/br&gt;&quot;;//布
+//以上是因为substr默认是单字节，而中文一定不是单字节，mb_substr是做多字节处理的，也接受编码类型的参数，默认是内部字符编码
+
+$b=&apos;ab&apos;;
+echo substr($b, 1).&quot;&lt;/br&gt;&quot;;//b
+//内容太多不写demo了
+</code></pre><blockquote>
+<p>demo</p>
+</blockquote>
+<pre><code>&lt;?php
+//日期格式的字符串比较
+$a=&apos;2015-12-1&apos;;
+$b=&apos;2015-12-2&apos;;
+var_dump(strtotime($a)&gt;strtotime($b));//false
+var_dump($a==$b);//false
+var_dump ($a&gt;$b);//false $a&lt;$b
+$c=&apos;2015-12-1 12:12:12&apos;;
+$d=&apos;2015-12-1 12:12:13&apos;;
+var_dump(strtotime($c)&gt;strtotime($d));//false
+var_dump($c==$d);//false
+var_dump($c&gt;$d);//false $c&lt;$d
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+define(&apos;DEMO&apos;,&apos;123&apos;);
+const ABC=1;
+echo ABC;
+$getdefine=get_defined_constants();
+//其实想说的还是字符串里最好还是解析变量尽量不要写别的结构
+echo &lt;&lt;&lt;DEMO
+get_defined_constants(&apos;DEMO&apos;)
+{get_define_constants(&apos;DEMO&apos;)}
+{$getdefine[&apos;DEMO&apos;]}
+{ABC}
+DEMO;
+//输出get_defined_constants(&apos;DEMO&apos;)
+//{get_define_constants(&apos;DEMO&apos;)}
+//123
+//{ABC}
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+//在花括号中写各种表达式的语法
+function funcName($a){
+    return $a;
+}
+$funcName=&apos;funcName&apos;;
+function funcName2($c,$d){
+    return $c*$d;
+}
+$funcName2=&apos;funcName2&apos;;
+echo &quot;{funcName(1)}&quot;;//{funcName(1)}
+echo &quot;{$funcName(&apos;succ&apos;)}&quot;;//succ
+echo &quot;{$funcName2(2,5)}&quot;;//10
+//其实这就是一种把语法技巧，把方法名用字符串来标示
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+class Test {
+    const ONE = &apos;a&apos;;
+    const TWO= &apos;b&apos;;
+}
+echo &quot;foo {Test::ONE} bar {Test::TWO}&quot;;//输出：foo {Test::ONE} bar {Test::TWO}f
+//以上是官网的例子 就是说不能直接用静态变量
+//这个是我写的 想用在字符串中利用静态变量做为变量名，也许在开发中会用到，但是我觉得这是脱裤子放屁
+$a=1;
+$b=2;
+echo &quot;foo ${Test::ONE} bar ${Test::TWO}&quot; ;
+?&gt;
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/22/类和对象-继承/" rel="next" title="类和对象-继承">
+                <i class="fa fa-chevron-left"></i> 类和对象-继承
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/22/语法/" rel="prev" title="php语法">
+                php语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/11/22/数据类型/" data-title="php类型" data-url="http://yoursite.com/2018/11/22/数据类型/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="http://45.32.40.33/phpManual/touxiang.jpg" alt="秋哥">
+          <p class="site-author-name" itemprop="name">秋哥</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gbkus123/" target="_blank" title="github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/xiao-dong-bei-53" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">秋哥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gbq"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

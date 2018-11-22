@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="1.语句 和 表达式">
+<meta name="description" content="对属性和方法的访问控制有三个关键字: public : 公用的类成员可以在任何地方被访问">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 语法">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/js语法/index.html">
+<meta property="og:title" content="访问控制">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/类和对象-访问控制/index.html">
 <meta property="og:site_name" content="中二病也要写代码">
-<meta property="og:description" content="1.语句 和 表达式">
+<meta property="og:description" content="对属性和方法的访问控制有三个关键字: public : 公用的类成员可以在任何地方被访问">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T12:44:58.884Z">
+<meta property="og:updated_time" content="2018-11-22T12:44:58.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 语法">
-<meta name="twitter:description" content="1.语句 和 表达式">
+<meta name="twitter:title" content="访问控制">
+<meta name="twitter:description" content="对属性和方法的访问控制有三个关键字: public : 公用的类成员可以在任何地方被访问">
 
 
 
@@ -110,7 +110,7 @@
   };
 </script>
 
-  <title> javascript 语法 | 中二病也要写代码 </title>
+  <title> 访问控制 | 中二病也要写代码 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
             
             
               
-                javascript 语法
+                访问控制
               
             
           </h1>
@@ -283,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/11/22/js语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/js语法/" itemprop="commentsCount"></span>
+                <a href="/2018/11/22/类和对象-访问控制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/类和对象-访问控制/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,117 +307,300 @@
       
 
       
-        <blockquote>
-<p>1.语句 和 表达式<br><a id="more"></a></p>
+        <p>对属性和方法的访问控制有三个关键字:</p>
+<p>public : 公用的类成员可以在任何地方被访问</p>
+<a id="more"></a>
+<p>protected : 受保护的类成员可以被自身 子类 父类访问</p>
+<p>private : 私有的类成员只能在定义的类里访问</p>
+<blockquote>
+<p>属性的访问控制</p>
 </blockquote>
-<p>2018年11月22日20:17:16<br>语句是为了完成某种任务的操作,一般情况下一条语句不需要返回值,比如下面就是一条赋值语句</p>
-<pre><code>var a;
-</code></pre><p>语句以<code>;</code>为结尾,而<code>;</code>之前可以没有任何内容,javascript 将其视为空语句,可以这么写,但不推荐:</p>
-<pre><code>;;;
-</code></pre><p>表达式是一条期望得到值得语句,一条语句可以有多条表达式,这是一条有表达式的语句:</p>
-<pre><code>var a = 123-122;
-</code></pre><p>而表达式本身 不需要<code>;</code>结尾,因为如果添加了分号, javascript 引擎会把它视为语句,但他仅有返回值,没有任何操作 没有任何意义</p>
-<pre><code>//一下语句虽然经过计算,但无意义
-1+2;
-&apos;abc&apos;+&apos;d&apos;;
-</code></pre><blockquote>
-<p>2.变量</p>
-</blockquote>
-<p>变量是对值得引用,使用变量等于引用一个值,每一个变量都需要一个变量名;</p>
-<p>声明变量用<code>var</code></p>
-<p>声明和赋值是两个步骤:</p>
-<pre><code>var a = 1;
-//其实是首先先创建一个变量
-var a;
-//然后在变量和a 和数值1之间建立引用关系
-a = 1;
-</code></pre><p>如果声明一个变量没有赋值那么,这个变量的值是不存在的, js 用undefined 表示</p>
-<pre><code>//在浏览器的console 中如果,输入 var a;
-var a;
-//console 中会直接返回undefined
-</code></pre><p>可以一次声明多个变量,用<code>,</code>分隔</p>
-<pre><code>var a ,b;
-var a =1 ,b=2;
-</code></pre><p>javascript 和 Php 一样都是动态语言, 变量没有类型限制:</p>
-<pre><code>var a =1;
-a = {1:1};
-a=&apos;a&apos;;
-</code></pre><p>重新声明一个变量是无效的(不会报错),但重新声明时可以赋值并覆盖之前变量的值,不推荐这么写</p>
-<pre><code>var  a = 1;
-var a; //无效
-var a = 2;//a等于2 不推荐 , 正常写法: a = 2;
-</code></pre><blockquote>
-<p>3.变量提升</p>
-</blockquote>
-<p>javascript 引擎的工作方式,先解析代码,并获取所有声明变量的语句,相当于把所有变量的声明都提升到代码的头部,这就是变量提升,变量提升只对<code>var</code>声明的有效, 如果声明一个新变量不用<code>var</code>,是会报错的,比如:<code>new = 1;</code>这种写法不适用于声明变量,但可以作为对象的属性赋值</p>
-<pre><code>console.log(gg);
-var gg = 1; 
-//显示 undefined,这是因为实际运行的代码是:
-//var gg;
-//console.log(gg);
-//gg = 1;
-</code></pre><blockquote>
-<p>1.4标识符</p>
-</blockquote>
-<p>标识符标识符就是个名字,用来识别不同对象,可以理解为变量名和函数名.js 的标识符大小写敏感, a 和 A ,a()和A()都是不同的变量和函数</p>
-<p>标识符有明确的命名规则,不符合规则js 解释引擎就会报错:</p>
-<p>第一个字符，可以是任意Unicode字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。</p>
-<p>第二个字符及后面的字符，除了Unicode字母、美元符号和下划线，还可以用数字0-9。</p>
-<pre><code>var _a = 1;
-var $_1 =1;
-var _1 = 1;
-var $1 = 1;
-var a1 = 1;
-var $a = 1;
-var _a = 1;
-var a_$1 = 1;
-var π =1 ;    
-var 中文 = 1;
-var ##qwe =1; //报错
-var 1 = 1;//报错
-var a-1 = 1;//报错
-</code></pre><blockquote>
-<p>1.5 注释</p>
-</blockquote>
-<p>单行注释<code>//这是单行注释</code></p>
-<p>多行注释</p>
-<pre><code>/*
-这是多行注释
-.
-.
-.
-*/
-</code></pre><blockquote>
-<p>1.6 区块 这就是区块:</p>
-</blockquote>
-<pre><code>{
-//我在区块里面
-}
-</code></pre><p>js 中的区块在单独使用时并不是一个单独的作用域    , 区块内外是同一作用域 , 可以理解为没有代码隔离, </p>
-<p>但是区块是用来构成更复杂的语法结构  <code>for , while foreach  function</code></p>
-<pre><code>{
+<pre><code>&lt;?php
 
-    var a = 1;
-}
-if(a ==  1){
+class A{
+    public $publicA = &apos;publicA&apos;.&quot;&lt;/br&gt;&quot;;
+    protected $protectedA = &apos;protectedA&apos;.&quot;&lt;/br&gt;&quot;;
+    private $privateA = &apos;privateA&apos;.&quot;&lt;/br&gt;&quot;;
+    public function pulicFuncA(){
+        echo &apos;this is publicA&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function protectedFuncA(){
+        echo &apos;this is protectedA&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function privateFuncA(){
+        echo &apos;this is privateA&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function getProtected(){
+        echo $this-&gt;protectedA;
+    }
+    public function getPrivate(){
+        echo $this-&gt;privateA ;
+    }
 
-     var b = 1 ;
 }
-function test(){
-    var c = 1;
+$a = new A();
+echo $a-&gt;publicA;//publicA
+// echo $a-&gt;protectedA;//fatal error
+// echo $a-&gt;privateA;//fatal error
+$a-&gt;pulicFuncA();//this is publicA
+// $a-&gt;protectedFuncA();//fatal error
+// $a-&gt;privateFuncA();//fatal error
+$a-&gt;getProtected();//protectedA
+$a-&gt;getPrivate();//privateA
+
+//子类可以修改父类Public protected 的属性
+//同名的 private 的属性不可以被重置,子类调用父类的 &apos;获取同名私有属性&apos; 方法时,
+//访问的是父类的 私有属性,下面这个例子中获取子类的私有属性,重新写一个
+//获取该私有属性的方法
+class B extends A{
+    public $publicA = &apos;publicB&apos;.&quot;&lt;/br&gt;&quot;;
+    protected $protectedA = &apos;protectedB&apos;.&quot;&lt;/br&gt;&quot;;
+    private $privateA = &apos;asdf&apos;;
+    public function getPrivateB(){
+        echo $this-&gt;privateA;
+    }
 }
-console.log(a);//1
-console.log(b);//1
-console.log(c);//Uncaught ReferenceError: c is not defined
+$b = new B();
+echo $b-&gt;publicA;//publicB
+$b-&gt;getProtected();//protectedB
+$b-&gt;getPrivate();//privateA
+$b-&gt;getPrivateB();//asdf
 </code></pre><blockquote>
-<p>2条件语句<br>js 提供 js 和 swith</p>
-<p>2.1 if结构</p>
+<p>方法的访问控制</p>
 </blockquote>
-<p>if判断为 true 之后如果只需要执行一条语句,不需要大括号:</p>
-<pre><code>var a = 1;
-if(1 == a)console.log(a);//输出1
-</code></pre><p>多条语句 就要加大括号<code>{}</code><br>_</p>
+<p>方法的访问控制,声明访问控制和属性一样,如果不声明默认 Public</p>
+<pre><code>&lt;?php
+class A 
+{
+    public function b(){
+        echo &apos;this is b &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function c(){
+        echo &apos;this is c &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function d(){
+        echo &apos;this is d &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+$a = new A();
 
+$a-&gt;b();//this is b
+// $a-&gt;c();//fatal error
+// $a-&gt;d();//fatal error
+</code></pre><p>同属性一样父类的 Pulic protected 方法可以被调用,也可以重载,但 private 方法不可以</p>
+<pre><code>&lt;?php
+class A 
+{
+    public function b(){
+        echo &apos;this is A b &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function c(){
+        echo &apos;this is A c &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function d(){
+        echo &apos;this is A d &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public  function execProtected(){
+        $this-&gt;c();
+    }
+    public function execPrivate(){
+        $this-&gt;d();
+    }
+}
+class Bar extends A{
+    public function b(){
+        echo &apos;this is B b &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function c(){
+        echo &apos;this is B c &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    private function d(){
+        echo &apos;this is A d &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+$a = new A();
+$b = new Bar();
+$b -&gt; b();//this is B b 
+$b -&gt; execProtected();//this is B c 
+$b -&gt; execPrivate();//this is A d 
+</code></pre><p>或者下面这个例子</p>
+<pre><code>&lt;?php
+class Foo
+{
+    public function  exec(){
+        $this -&gt;func1();
+        $this -&gt;func2();
+        $this -&gt;func3();
+    }
+    public function func1(){
+        echo &apos;this is Foo fun1&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function func2(){
+        echo &apos;this is Foo fun2&apos;.&quot;&lt;/br&gt;&quot;;
+    } 
+    private function func3(){
+        echo &apos;this is Foo fun3&apos;.&quot;&lt;/br&gt;&quot;;    
+    }
+}
+class Bar extends Foo{
+
+    public function func1(){
+        echo &apos;this is Bar fun1&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function func2(){
+        echo &apos;this is Bar fun2&apos;.&quot;&lt;/br&gt;&quot;;
+    } 
+    private function func3(){
+        echo &apos;this is Bar fun3&apos;.&quot;&lt;/br&gt;&quot;;    
+    }
+
+}
+$a = new Foo();
+$b = new Bar();
+$a -&gt; exec();
+$b -&gt; exec();
+// this is Foo fun1
+// this is Foo fun2
+// this is Foo fun3
+// this is Bar fun1
+// this is Bar fun2
+// this is Foo fun3
+</code></pre><p>同一个类的不同实例可以互相访问该类的private protected 成员</p>
+<pre><code>&lt;?php
+class test{
+    private $bar = &apos;&apos;;
+    protected $foo = &apos;&apos;;
+    public function __construct($pir,$pro){
+        $this-&gt;bar = $pir;
+        $this-&gt;foo = $pro;
+    }
+    private function abc(){
+        echo &apos;this is private func&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    protected function efg(){
+        echo &apos;this is protected func&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function getProperty(test $obj){
+
+        echo $obj-&gt;bar;
+        echo $obj-&gt;foo;
+        $obj-&gt;abc();
+        $obj-&gt;efg();
+    }
+}
+$a = new test(&apos;test &apos;,&apos;1&apos;);
+$a-&gt;getProperty(new test(&apos;test &apos;,&apos;2&apos;));
+// 输出 
+// test 2
+// this is private func
+//this is protected func
+</code></pre><blockquote>
+<p>demo</p>
+</blockquote>
+<p>一歪果仁认为简单的设置对象的类属性$newObj-&gt;property=1; 和简单的获取类属性是不对的,因为你不知道这个类属性是怎么定义的,你可以给类属性任意的值 ,所以他建议用以下这种写法,其实我觉得多此一举,我觉得别的强类型和纯面向对象语言都是这么干的:</p>
+<pre><code>&lt;?php
+class test{
+    protected $name = &apos;undefined&apos;;
+    protected $money = 0.00;
+
+    public function getName(){
+        return $this-&gt;name;
+    }
+    public function getMoney(){
+        return $this-&gt;money;
+    }
+    public function setName($name){
+        if(is_string($name)){
+            $this-&gt;name = strval($name);
+        }
+    }
+    public function setMoney($money){
+        if(is_numeric($money)){
+            $this-&gt;money = floatval($money);
+        }
+    }
+}
+$a = new test();
+$a-&gt;setName(1);
+$a-&gt;setMoney(&apos;abc&apos;);
+echo $a-&gt;getName();
+echo $a-&gt;getMoney();
+// 输出  undefined 0
+$a-&gt;setName(&apos;lilei&apos;);
+$a-&gt;setMoney(250);
+echo $a-&gt;getName();
+echo $a-&gt;getMoney();
+// 输出  lilei250
+</code></pre><p>上面这个例子如果不这么写的话 其实是不需要那四个 function 的</p>
+<p>可以一次声明多个类属性</p>
+<pre><code>    &lt;?php
+class test{
+    public $a = 1,$b = 2;
+    protected $c = 3, $d = 4;
+    private $e = 5,$f = 6;
+    function getPro(){
+        echo $this-&gt;c,$this-&gt;d;
+    }
+    function getPri(){
+        echo $this-&gt;e,$this-&gt;f;
+    }
+}
+$a = new test();
+echo $a-&gt;a,$a-&gt;b;
+$a-&gt;getPro();
+$a-&gt;getPri();
+// 输出  123456
+</code></pre><p>同类不同实例互相访问时,可以像之前那种写法function test( class $varibies) 也可以直接传对象</p>
+<pre><code>    &lt;?php
+class test{
+    protected function foo(){
+        echo &apos;pro&apos;;
+    }
+    private function foo1(){
+        echo &apos;pri&apos;;
+    }
+    static function exec($a){
+        $a-&gt;foo();
+    }
+    function exec1($a){
+        $a-&gt;foo1();
+    }
+}
+$a = new test();
+$a-&gt;exec($a);//pro
+$a-&gt;exec1($a);//pri
+</code></pre><p>这个例子主要是说明父类不能调用子类的 private 方法,这个东西不需要太复杂就没改直接 copy 的</p>
+<pre><code>    &lt;?php
+
+class ParentClass {
+
+    public function execute($method) {
+        $this-&gt;$method();
+    }
+
+}
+
+class ChildClass extends ParentClass {
+
+    private function privateMethod() {
+        echo &quot;hi, i&apos;m private&quot;;
+    }
+
+    protected function protectedMethod() {
+        echo &quot;hi, i&apos;m protected&quot;;
+    }
+
+}
+
+$object = new ChildClass();
+
+$object-&gt;execute(&apos;protectedMethod&apos;);
+
+$object-&gt;execute(&apos;privateMethod&apos;);
+//输出
+//    hi, i&apos;m protected
+//Fatal error: Call to private method ChildClass::privateMethod() from context &apos;ParentClass&apos; in index.php on line 6
+</code></pre>
       
     </div>
     
@@ -440,16 +623,16 @@ if(1 == a)console.log(a);//输出1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/22/类和对象-构造和析构函数/" rel="next" title="类和对象-构造函数和析构函数">
-                <i class="fa fa-chevron-left"></i> 类和对象-构造函数和析构函数
+              <a href="/2018/11/22/js语法/" rel="next" title="javascript 语法">
+                <i class="fa fa-chevron-left"></i> javascript 语法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/22/类和对象-访问控制/" rel="prev" title="访问控制">
-                访问控制 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/22/类和对象 /" rel="prev" title="类和对象-基础">
+                类和对象-基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -476,7 +659,7 @@ if(1 == a)console.log(a);//输出1
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/11/22/js语法/" data-title="javascript 语法" data-url="http://yoursite.com/2018/11/22/js语法/">
+      <div class="ds-thread" data-thread-key="2018/11/22/类和对象-访问控制/" data-title="访问控制" data-url="http://yoursite.com/2018/11/22/类和对象-访问控制/">
       </div>
     
   </div>

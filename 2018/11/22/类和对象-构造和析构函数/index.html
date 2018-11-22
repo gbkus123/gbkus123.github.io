@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="1.语句 和 表达式">
+<meta name="description" content="构造函数:具有构造函数的类在每次创建对象的时候会先调用构造函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 语法">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/js语法/index.html">
+<meta property="og:title" content="类和对象-构造函数和析构函数">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/类和对象-构造和析构函数/index.html">
 <meta property="og:site_name" content="中二病也要写代码">
-<meta property="og:description" content="1.语句 和 表达式">
+<meta property="og:description" content="构造函数:具有构造函数的类在每次创建对象的时候会先调用构造函数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T12:44:58.884Z">
+<meta property="og:updated_time" content="2018-11-22T12:44:58.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 语法">
-<meta name="twitter:description" content="1.语句 和 表达式">
+<meta name="twitter:title" content="类和对象-构造函数和析构函数">
+<meta name="twitter:description" content="构造函数:具有构造函数的类在每次创建对象的时候会先调用构造函数">
 
 
 
@@ -110,7 +110,7 @@
   };
 </script>
 
-  <title> javascript 语法 | 中二病也要写代码 </title>
+  <title> 类和对象-构造函数和析构函数 | 中二病也要写代码 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
             
             
               
-                javascript 语法
+                类和对象-构造函数和析构函数
               
             
           </h1>
@@ -283,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/11/22/js语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/js语法/" itemprop="commentsCount"></span>
+                <a href="/2018/11/22/类和对象-构造和析构函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/类和对象-构造和析构函数/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,116 +308,291 @@
 
       
         <blockquote>
-<p>1.语句 和 表达式<br><a id="more"></a></p>
+<p>构造函数:具有构造函数的类在每次创建对象的时候会先调用构造函数</p>
 </blockquote>
-<p>2018年11月22日20:17:16<br>语句是为了完成某种任务的操作,一般情况下一条语句不需要返回值,比如下面就是一条赋值语句</p>
-<pre><code>var a;
-</code></pre><p>语句以<code>;</code>为结尾,而<code>;</code>之前可以没有任何内容,javascript 将其视为空语句,可以这么写,但不推荐:</p>
-<pre><code>;;;
-</code></pre><p>表达式是一条期望得到值得语句,一条语句可以有多条表达式,这是一条有表达式的语句:</p>
-<pre><code>var a = 123-122;
-</code></pre><p>而表达式本身 不需要<code>;</code>结尾,因为如果添加了分号, javascript 引擎会把它视为语句,但他仅有返回值,没有任何操作 没有任何意义</p>
-<pre><code>//一下语句虽然经过计算,但无意义
-1+2;
-&apos;abc&apos;+&apos;d&apos;;
-</code></pre><blockquote>
-<p>2.变量</p>
-</blockquote>
-<p>变量是对值得引用,使用变量等于引用一个值,每一个变量都需要一个变量名;</p>
-<p>声明变量用<code>var</code></p>
-<p>声明和赋值是两个步骤:</p>
-<pre><code>var a = 1;
-//其实是首先先创建一个变量
-var a;
-//然后在变量和a 和数值1之间建立引用关系
-a = 1;
-</code></pre><p>如果声明一个变量没有赋值那么,这个变量的值是不存在的, js 用undefined 表示</p>
-<pre><code>//在浏览器的console 中如果,输入 var a;
-var a;
-//console 中会直接返回undefined
-</code></pre><p>可以一次声明多个变量,用<code>,</code>分隔</p>
-<pre><code>var a ,b;
-var a =1 ,b=2;
-</code></pre><p>javascript 和 Php 一样都是动态语言, 变量没有类型限制:</p>
-<pre><code>var a =1;
-a = {1:1};
-a=&apos;a&apos;;
-</code></pre><p>重新声明一个变量是无效的(不会报错),但重新声明时可以赋值并覆盖之前变量的值,不推荐这么写</p>
-<pre><code>var  a = 1;
-var a; //无效
-var a = 2;//a等于2 不推荐 , 正常写法: a = 2;
-</code></pre><blockquote>
-<p>3.变量提升</p>
-</blockquote>
-<p>javascript 引擎的工作方式,先解析代码,并获取所有声明变量的语句,相当于把所有变量的声明都提升到代码的头部,这就是变量提升,变量提升只对<code>var</code>声明的有效, 如果声明一个新变量不用<code>var</code>,是会报错的,比如:<code>new = 1;</code>这种写法不适用于声明变量,但可以作为对象的属性赋值</p>
-<pre><code>console.log(gg);
-var gg = 1; 
-//显示 undefined,这是因为实际运行的代码是:
-//var gg;
-//console.log(gg);
-//gg = 1;
-</code></pre><blockquote>
-<p>1.4标识符</p>
-</blockquote>
-<p>标识符标识符就是个名字,用来识别不同对象,可以理解为变量名和函数名.js 的标识符大小写敏感, a 和 A ,a()和A()都是不同的变量和函数</p>
-<p>标识符有明确的命名规则,不符合规则js 解释引擎就会报错:</p>
-<p>第一个字符，可以是任意Unicode字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。</p>
-<p>第二个字符及后面的字符，除了Unicode字母、美元符号和下划线，还可以用数字0-9。</p>
-<pre><code>var _a = 1;
-var $_1 =1;
-var _1 = 1;
-var $1 = 1;
-var a1 = 1;
-var $a = 1;
-var _a = 1;
-var a_$1 = 1;
-var π =1 ;    
-var 中文 = 1;
-var ##qwe =1; //报错
-var 1 = 1;//报错
-var a-1 = 1;//报错
-</code></pre><blockquote>
-<p>1.5 注释</p>
-</blockquote>
-<p>单行注释<code>//这是单行注释</code></p>
-<p>多行注释</p>
-<pre><code>/*
-这是多行注释
-.
-.
-.
-*/
-</code></pre><blockquote>
-<p>1.6 区块 这就是区块:</p>
-</blockquote>
-<pre><code>{
-//我在区块里面
+<a id="more"></a>
+<pre><code>&lt;?php
+//子类自动继承父类构造函数
+class A{
+    public function __construct(){
+        echo get_class().&quot;&lt;/br&gt;&quot;;
+    }
 }
-</code></pre><p>js 中的区块在单独使用时并不是一个单独的作用域    , 区块内外是同一作用域 , 可以理解为没有代码隔离, </p>
-<p>但是区块是用来构成更复杂的语法结构  <code>for , while foreach  function</code></p>
-<pre><code>{
+class B extends A{
 
-    var a = 1;
 }
-if(a ==  1){
-
-     var b = 1 ;
-}
-function test(){
-    var c = 1;
-}
-console.log(a);//1
-console.log(b);//1
-console.log(c);//Uncaught ReferenceError: c is not defined
+new A();//输出 A
+new B();//输出 A
 </code></pre><blockquote>
-<p>2条件语句<br>js 提供 js 和 swith</p>
-<p>2.1 if结构</p>
+<p>子类声明构造函数后会覆盖父类的构造函数</p>
 </blockquote>
-<p>if判断为 true 之后如果只需要执行一条语句,不需要大括号:</p>
-<pre><code>var a = 1;
-if(1 == a)console.log(a);//输出1
-</code></pre><p>多条语句 就要加大括号<code>{}</code><br>_</p>
+<pre><code>&lt;?php
+class A{
+    public function __construct(){
+        echo get_class().&quot;&lt;/br&gt;&quot;;
+    }
+}
+class B extends A{
+    public function __construct(){
+        echo get_class();
+    }
+}
+new A();//输出 A
+new B();//输出 B
+</code></pre><blockquote>
+<p>子类可以在构造函数中执行父类的构造函数</p>
+</blockquote>
+<pre><code>&lt;?php
+class A{
+    public function __construct(){
+        echo get_class().&quot;&lt;/br&gt;&quot;;
+    }
+}
+class B extends A{
+    public function __construct(){
+        parent::__construct();
+        echo get_class();
+    }
+}
+new A();//输出 A
+new B();//输出 A B
+</code></pre><blockquote>
+<p>子类构造函数覆盖父类构造函数时</p>
+</blockquote>
+<pre><code>&lt;?php
+class A{
+    public function __construct($a){
+        echo $a.&quot;&lt;/br&gt;&quot;;
+    }
+}
+class B extends A{
+    public function __construct($a,$b){
+        // parent::__construct();
+        //这行要是放开注释会报一个 warning 和 notice 因为子类构造函数和父类构造函数的参数不同
+        echo $a.$b.&quot;&lt;/br&gt;&quot;;
+    }
+}
+new A(&apos;a&apos;);//输出 a
+new B(&apos;a&apos;,&apos;b&apos;);//输出 a b
+</code></pre><blockquote>
+<p>在没有命名空间时,在还没有找到构造函数时,会把与类同名的函数当做构造函数</p>
+</blockquote>
+<pre><code>&lt;?php
+class test{
+    public function __construct(){
+        echo &apos;construct&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function test(){
+        echo &apos;test&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+class test1{
+    public function test1(){
+        echo &apos;test&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function __construct(){
+        echo &apos;construct&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+class test2{
+    public function test2(){
+        echo &apos;test2&apos;;
+    }
+}
+new test();//construct
+new test1();//construct,报一个严格的错误检查:提示构造函数被覆
+new test2();//test2
+</code></pre><blockquote>
+<p>有命名空间时,和类同名的函数,不会吧同名方法当做构造函数</p>
+</blockquote>
+<pre><code>&lt;?php
+namespace Test;
+class Test{
+    public function Test(){
+        echo test;
+    }
+    public function __construct(){
+        echo &apos;test&apos;;
+    }
+}
+class Test1{
+    public function __construct(){
+        echo &apos;test1&apos;;
+    }
+    public function Test1(){
+        echo &apos;test1&apos;;
+    }
+}
+new Test();//test
+new Test1();//test1
+</code></pre><blockquote>
+<p>私有构造函数</p>
+</blockquote>
+<pre><code>&lt;?php
+    class Test{
+        const abc=&apos;abc&apos;;
+        public $a=&apos;a&apos;;
+        static $b=&apos;b&apos;;
+        private function __construct(){
+            echo &apos;test&apos;;
+        }
+        public function geta(){
+            return &apos;a&apos;;
+        }
+        static function getb(){
+            return &apos;b&apos;;
+        }
+    }
+    echo Test::abc;//abc
+    echo Test::$b;//b
+    echo Test::getb();//b
+    echo Test::geta();//a 并报 strict standards 因为用静态方法调用非静态方法
+    class Test2 extends Test{
 
+    }
+    // new Test();//声明一个构造函数是私有的类会报 fatalerror 
+    // new Test2();//fatalerror 和上面一样
+    class Test3 extends Test{
+        public function __construct(){
+            echo &apos;test3&apos;;
+        }
+    }
+    $a = new Test3();//test3可以正常实例化
+</code></pre><blockquote>
+<p>析构函数:析构函数在对象被销毁时调用 </p>
+</blockquote>
+<pre><code>&lt;?php
+//test.php
+class Test{
+    public function  __destruct(){
+        echo &apos;this is  test desstruct&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+class Test1 extends Test{
+
+}
+class Test2 extends Test{
+    public function __destruct(){
+        parent::__destruct();
+        echo &apos;this is test2 desstruct&apos;.&quot;&lt;/br&gt;&quot;;
+
+    }
+}
+
+new Test();//this is test desstruct
+new Test1();//this is test desstruct
+new Test2();//this is test desstruct,this is test2 desstruct
+require_once(&apos;test2.php&apos;);
+new test3();//this is test2 file ,脚本关闭时的文件和被请求的文件不是一个
+
+//text2.php
+&lt;?php
+class test3{
+    public function __destruct(){
+        echo &apos;this is test2 file&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+</code></pre><blockquote>
+<p>exit() 和  die() 时候也会 调用析构函数</p>
+</blockquote>
+<pre><code>&lt;?php
+class Test{
+    public function __construct(){
+        echo &apos;Start&apos;.&quot;&lt;/br&gt;&quot;;
+        die();
+    }
+
+    public function  __destruct(){
+        echo &apos;exit will exec destruct&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+new Test();
+//输出:
+// Start
+// exit will exec destruct
+</code></pre><blockquote>
+<p>demo</p>
+</blockquote>
+<p>第一个构造函数的 demo</p>
+<pre><code>    &lt;?php
+class test{
+    public function __construct(){
+        $argArr = func_get_args();
+        $num = func_num_args();
+        if(method_exists($this, $name=&apos;arg&apos;.$num)){
+            call_user_func_array(&quot;self::$name&quot;, $argArr);
+        }
+        else{
+            echo &apos;args illegal&apos;;
+        }
+    }
+    public static function arg1($a){
+        echo $a.&quot;&lt;/br&gt;&quot;;
+    }
+    public static function arg2($a,$b){
+        echo $a.&apos; &apos;.$b.&quot;&lt;/br&gt;&quot;;
+    }
+    public static function arg3($a,$b,$c){
+        echo $a.&apos; &apos;.$b.&apos; &apos;.$c.&quot;&lt;/br&gt;&quot;;
+    }
+}
+new test(&apos;a&apos;);//a
+new test(&apos;a&apos;,&apos;b&apos;);//a b
+new test(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;);//a b c
+</code></pre><p>当两个对象互相引用时,析构函数被执行的时机就很诡异</p>
+<pre><code>&lt;?php
+header(&apos;Content-type:text/plain&apos;);
+class Foo{
+    private $name;
+    private $link;
+    public function __construct($name){
+        $this-&gt;name = $name;
+    }
+    public function setLink(Foo $link){
+        $this-&gt;link = $link;
+        print_r($link);
+    }
+    public function __destruct(){
+        echo &apos;destruct:&apos;,$this-&gt;name, PHP_EOL;
+    }
+}
+$foo = new Foo(&apos;Foo 1&apos;);
+$bar = new Foo(&apos;Foo 2&apos;);
+
+$foo-&gt;setLink($bar);
+$bar-&gt;setLink($foo);
+$foo = null;
+$bar = null;
+
+$foo = new Foo(&apos;Foo 3&apos;);
+$bar = new Foo(&apos;Foo 4&apos;);
+
+$foo = null;
+$bar = null;
+echo &apos;End of script&apos;, PHP_EOL;
+//会输出这些
+//     Foo Object
+// (
+//     [name:Foo:private] =&gt; Foo 2
+//     [link:Foo:private] =&gt; 
+// )
+// Foo Object
+// (
+//     [name:Foo:private] =&gt; Foo 1
+//     [link:Foo:private] =&gt; Foo Object
+//         (
+//             [name:Foo:private] =&gt; Foo 2
+//             [link:Foo:private] =&gt; Foo Object
+//  *RECURSION*
+//         )
+
+// )
+// destruct:Foo 3
+// destruct:Foo 4
+// End of script
+// destruct:Foo 1
+// destruct:Foo 2
+</code></pre>
       
     </div>
     
@@ -440,16 +615,16 @@ if(1 == a)console.log(a);//输出1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/22/类和对象-构造和析构函数/" rel="next" title="类和对象-构造函数和析构函数">
-                <i class="fa fa-chevron-left"></i> 类和对象-构造函数和析构函数
+              <a href="/2018/11/22/类和对象-范围解析操作符/" rel="next" title="范围解析操作符`::`">
+                <i class="fa fa-chevron-left"></i> 范围解析操作符`::`
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/22/类和对象-访问控制/" rel="prev" title="访问控制">
-                访问控制 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/22/js语法/" rel="prev" title="javascript 语法">
+                javascript 语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -476,7 +651,7 @@ if(1 == a)console.log(a);//输出1
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/11/22/js语法/" data-title="javascript 语法" data-url="http://yoursite.com/2018/11/22/js语法/">
+      <div class="ds-thread" data-thread-key="2018/11/22/类和对象-构造和析构函数/" data-title="类和对象-构造函数和析构函数" data-url="http://yoursite.com/2018/11/22/类和对象-构造和析构函数/">
       </div>
     
   </div>

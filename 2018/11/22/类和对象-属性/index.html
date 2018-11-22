@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="1.语句 和 表达式">
+<meta name="description" content="属性的声明">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 语法">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/js语法/index.html">
+<meta property="og:title" content="类和对象-属性">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/类和对象-属性/index.html">
 <meta property="og:site_name" content="中二病也要写代码">
-<meta property="og:description" content="1.语句 和 表达式">
+<meta property="og:description" content="属性的声明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T12:44:58.884Z">
+<meta property="og:updated_time" content="2018-11-22T12:44:58.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 语法">
-<meta name="twitter:description" content="1.语句 和 表达式">
+<meta name="twitter:title" content="类和对象-属性">
+<meta name="twitter:description" content="属性的声明">
 
 
 
@@ -110,7 +110,7 @@
   };
 </script>
 
-  <title> javascript 语法 | 中二病也要写代码 </title>
+  <title> 类和对象-属性 | 中二病也要写代码 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
             
             
               
-                javascript 语法
+                类和对象-属性
               
             
           </h1>
@@ -283,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/11/22/js语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/js语法/" itemprop="commentsCount"></span>
+                <a href="/2018/11/22/类和对象-属性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/类和对象-属性/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,116 +308,212 @@
 
       
         <blockquote>
-<p>1.语句 和 表达式<br><a id="more"></a></p>
+<p>属性的声明 </p>
 </blockquote>
-<p>2018年11月22日20:17:16<br>语句是为了完成某种任务的操作,一般情况下一条语句不需要返回值,比如下面就是一条赋值语句</p>
-<pre><code>var a;
-</code></pre><p>语句以<code>;</code>为结尾,而<code>;</code>之前可以没有任何内容,javascript 将其视为空语句,可以这么写,但不推荐:</p>
-<pre><code>;;;
-</code></pre><p>表达式是一条期望得到值得语句,一条语句可以有多条表达式,这是一条有表达式的语句:</p>
-<pre><code>var a = 123-122;
-</code></pre><p>而表达式本身 不需要<code>;</code>结尾,因为如果添加了分号, javascript 引擎会把它视为语句,但他仅有返回值,没有任何操作 没有任何意义</p>
-<pre><code>//一下语句虽然经过计算,但无意义
-1+2;
-&apos;abc&apos;+&apos;d&apos;;
-</code></pre><blockquote>
-<p>2.变量</p>
-</blockquote>
-<p>变量是对值得引用,使用变量等于引用一个值,每一个变量都需要一个变量名;</p>
-<p>声明变量用<code>var</code></p>
-<p>声明和赋值是两个步骤:</p>
-<pre><code>var a = 1;
-//其实是首先先创建一个变量
-var a;
-//然后在变量和a 和数值1之间建立引用关系
-a = 1;
-</code></pre><p>如果声明一个变量没有赋值那么,这个变量的值是不存在的, js 用undefined 表示</p>
-<pre><code>//在浏览器的console 中如果,输入 var a;
-var a;
-//console 中会直接返回undefined
-</code></pre><p>可以一次声明多个变量,用<code>,</code>分隔</p>
-<pre><code>var a ,b;
-var a =1 ,b=2;
-</code></pre><p>javascript 和 Php 一样都是动态语言, 变量没有类型限制:</p>
-<pre><code>var a =1;
-a = {1:1};
-a=&apos;a&apos;;
-</code></pre><p>重新声明一个变量是无效的(不会报错),但重新声明时可以赋值并覆盖之前变量的值,不推荐这么写</p>
-<pre><code>var  a = 1;
-var a; //无效
-var a = 2;//a等于2 不推荐 , 正常写法: a = 2;
-</code></pre><blockquote>
-<p>3.变量提升</p>
-</blockquote>
-<p>javascript 引擎的工作方式,先解析代码,并获取所有声明变量的语句,相当于把所有变量的声明都提升到代码的头部,这就是变量提升,变量提升只对<code>var</code>声明的有效, 如果声明一个新变量不用<code>var</code>,是会报错的,比如:<code>new = 1;</code>这种写法不适用于声明变量,但可以作为对象的属性赋值</p>
-<pre><code>console.log(gg);
-var gg = 1; 
-//显示 undefined,这是因为实际运行的代码是:
-//var gg;
-//console.log(gg);
-//gg = 1;
-</code></pre><blockquote>
-<p>1.4标识符</p>
-</blockquote>
-<p>标识符标识符就是个名字,用来识别不同对象,可以理解为变量名和函数名.js 的标识符大小写敏感, a 和 A ,a()和A()都是不同的变量和函数</p>
-<p>标识符有明确的命名规则,不符合规则js 解释引擎就会报错:</p>
-<p>第一个字符，可以是任意Unicode字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。</p>
-<p>第二个字符及后面的字符，除了Unicode字母、美元符号和下划线，还可以用数字0-9。</p>
-<pre><code>var _a = 1;
-var $_1 =1;
-var _1 = 1;
-var $1 = 1;
-var a1 = 1;
-var $a = 1;
-var _a = 1;
-var a_$1 = 1;
-var π =1 ;    
-var 中文 = 1;
-var ##qwe =1; //报错
-var 1 = 1;//报错
-var a-1 = 1;//报错
-</code></pre><blockquote>
-<p>1.5 注释</p>
-</blockquote>
-<p>单行注释<code>//这是单行注释</code></p>
-<p>多行注释</p>
-<pre><code>/*
-这是多行注释
-.
-.
-.
-*/
-</code></pre><blockquote>
-<p>1.6 区块 这就是区块:</p>
-</blockquote>
-<pre><code>{
-//我在区块里面
+<a id="more"></a>
+<p>以前用 <code>var $a=1;</code>,我从没用过,可以用 public,private ,protected 跟一个普通的变量声明,但这个普通的变量声明,声明属相如果单独写一个变量声明是语法错误<br>static 和 var 一样在不用访问控制关键字的时候,默认是 Public:</p>
+<pre><code>    &lt;?php
+class test{
+    // $b=33;//此行语法错误 
+    static $a=1;
 }
-</code></pre><p>js 中的区块在单独使用时并不是一个单独的作用域    , 区块内外是同一作用域 , 可以理解为没有代码隔离, </p>
-<p>但是区块是用来构成更复杂的语法结构  <code>for , while foreach  function</code></p>
-<pre><code>{
+class child extends test{
+    function a(){
+        echo self::$a;
+    }
+}
+echo test::$a;//1
+(new child())-&gt;a();//1
+</code></pre><p>声明属性时可以初始化,就是赋给他一个值,但不能是变量,也不能是一个函数的返回值;</p>
+<pre><code>&lt;?php
+class test{
+    public $int=1;
+    public $str=&apos;abc&apos;;
+    //public $res=array_merge([1],[2])//此行报语法错误
+    // public $int=$str;//fatal error 语法错误
+    // public $str=$this-&gt;int;//fatal error 语法犯错误
+    // public $met=self::method();//语法错误,属性不可以是一个对象的引用
+    public $obj=null;
+    public $arr=[];
+    public $eot=&lt;&lt;&lt;ABC
+        abc
+ABC;
+    public $bool=true;
+    static public function method(){
 
-    var a = 1;
+    }
 }
-if(a ==  1){
-
-     var b = 1 ;
-}
-function test(){
-    var c = 1;
-}
-console.log(a);//1
-console.log(b);//1
-console.log(c);//Uncaught ReferenceError: c is not defined
 </code></pre><blockquote>
-<p>2条件语句<br>js 提供 js 和 swith</p>
-<p>2.1 if结构</p>
+<p>访问类的属性</p>
 </blockquote>
-<p>if判断为 true 之后如果只需要执行一条语句,不需要大括号:</p>
-<pre><code>var a = 1;
-if(1 == a)console.log(a);//输出1
-</code></pre><p>多条语句 就要加大括号<code>{}</code><br>_</p>
+<pre><code>&lt;?php
+//访问类的经他属性和常量 不需要实例化就可访问只需要 className::
+//访问类的非静态属性和方法 用 -&gt;
+class test{
+    const C=&apos;const&apos;.&quot;&lt;/br&gt;&quot;;
+    public $a=&apos;a&apos;.&quot;&lt;/br&gt;&quot;;
+    static public $b=&apos;b&apos;.&quot;&lt;/br&gt;&quot;;
+    public function getAttri(){
+        //在类中调用类的参数和属性
+        echo self::C;//const
+        echo $this-&gt;a;//a
+        echo $this-&gt;b;//notice 和 e_strict,不可以用伪变量来调用静态属性
+        // echo self::$a;//fatal error不是一个静态属性
+        echo self::$b;//b
+    }
+    static function getAttris(){
+        echo self::C;//const
+        // echo $this-&gt;a;//fatal error 在静态方法中不可以使用 $this
+        // echo $this-&gt;b;//fatal error 在静态方法中不可以使用 $this
+        // echo self::$a;//fatal error不是一个静态属性
+        echo self::$b;//b
+    }
+    }
+    $t=new test();
+    echo $t-&gt;C;//notice
+    echo $t-&gt;b;//报 e_strict和 notice
+    echo $t-&gt;a;//a
+    echo test::$b;//b
+    echo test::C;//const
+    echo test::$b;//b
+    $t-&gt;getAttri();
+    test :: getAttris();
+</code></pre><blockquote>
+<p>Newdoc 和 Heredoc</p>
+</blockquote>
+<pre><code>    &lt;?php
+    //php5以后 newdoc heredoc 都可以在属性声明中使用
+    class test{
+        public $eot=&lt;&lt;&lt;ABC
+            abc
+ABC;
+        static public $here=&lt;&lt;&lt;HERE
+        heredoc
+HERE;
+            public $new=&lt;&lt;&lt;&apos;ABC&apos;
+            new
+ABC;
+        static public $news=&lt;&lt;&lt;&apos;HERE&apos;
+        news
+HERE;
 
+    }
+    echo (new test())-&gt;eot;//abc
+    echo test:: $here;//heredoc
+    echo (new test())-&gt;new;//new 
+    echo test::$news;//news
+</code></pre><blockquote>
+<p>伪变量$this调用属性时的技巧</p>
+</blockquote>
+<pre><code>&lt;?php
+class Test{
+public     $a=&apos;a&apos;;
+    function geta(){
+        echo $this-&gt;$a;
+        //这里会报 notice 因为没有&apos;$a&apos;这个属性,
+        //然后报 fatalerror不能获取一个空的数据
+    }
+    function getas(){
+        $a=&apos;a&apos;;
+        echo $this-&gt;$a;
+        //这里输出 a php 把$a 解析为 a 所以就找到了 属性 public $a
+    }
+}
+$t=new Test();
+$t-&gt;getas();
+$t-&gt;geta();
+</code></pre><blockquote>
+<p>demo</p>
+</blockquote>
+<pre><code>&lt;?php 
+
+class test 
+{ 
+    public $var1 = 1; 
+    protected $var2 = 2; 
+    private $var3 = 3; 
+    static $var4 = 4; 
+
+    public function toArray() 
+    { 
+        return (array) $this; 
+    } 
+    public function getval(){
+        return get_object_vars($this);
+    }
+
+} 
+
+$t = new test; 
+print_r(get_class_vars(&apos;test&apos;));
+print_r($t-&gt;getval());
+print_r(get_object_vars($t));
+print_r($t-&gt;toArray()); 
+
+/* outputs: 
+Array (
+ [var1] =&gt; 1 
+ [var4] =&gt; 4 
+ ) 
+ Array ( 
+ [var1] =&gt; 1 
+ [var2] =&gt; 2 
+ [var3] =&gt; 3 
+ ) 
+  Array ( 
+  [var1] =&gt; 1 
+  )
+Array 
+( 
+    [var1] =&gt; 1 
+    [ * var2] =&gt; 2 
+    [ test var3] =&gt; 3 
+) 
+
+*/ 
+?&gt; 
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+
+abstract class PropertyObject
+{
+  public function __get($name)
+  {
+    if (method_exists($this, ($method = &apos;get_&apos;.$name)))
+    {
+      return $this-&gt;$method();
+    }
+    else return;
+  }
+
+  public function __isset($name)
+  {
+    if (method_exists($this, ($method = &apos;isset_&apos;.$name)))
+    {
+      return $this-&gt;$method();
+    }
+    else return;
+  }
+
+  public function __set($name, $value)
+  {
+    if (method_exists($this, ($method = &apos;set_&apos;.$name)))
+    {
+      $this-&gt;$method($value);
+    }
+  }
+
+  public function __unset($name)
+  {
+    if (method_exists($this, ($method = &apos;unset_&apos;.$name)))
+    {
+      $this-&gt;$method();
+    }
+  }
+}
+
+?&gt;
+</code></pre>
       
     </div>
     
@@ -440,16 +536,16 @@ if(1 == a)console.log(a);//输出1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/22/类和对象-构造和析构函数/" rel="next" title="类和对象-构造函数和析构函数">
-                <i class="fa fa-chevron-left"></i> 类和对象-构造函数和析构函数
+              <a href="/2018/11/22/类和对象-抽象类/" rel="next" title="抽象类">
+                <i class="fa fa-chevron-left"></i> 抽象类
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/22/类和对象-访问控制/" rel="prev" title="访问控制">
-                访问控制 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/22/类和对象-范围解析操作符/" rel="prev" title="范围解析操作符`::`">
+                范围解析操作符`::` <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -476,7 +572,7 @@ if(1 == a)console.log(a);//输出1
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/11/22/js语法/" data-title="javascript 语法" data-url="http://yoursite.com/2018/11/22/js语法/">
+      <div class="ds-thread" data-thread-key="2018/11/22/类和对象-属性/" data-title="类和对象-属性" data-url="http://yoursite.com/2018/11/22/类和对象-属性/">
       </div>
     
   </div>

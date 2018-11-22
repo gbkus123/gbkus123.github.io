@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="1.语句 和 表达式">
+<meta name="description" content="父类必须在子类前被声明,此规则适用于接口 子类只能继承父类的 Public 和 public 属性和方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript 语法">
-<meta property="og:url" content="http://yoursite.com/2018/11/22/js语法/index.html">
+<meta property="og:title" content="类和对象-继承">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/类和对象-继承/index.html">
 <meta property="og:site_name" content="中二病也要写代码">
-<meta property="og:description" content="1.语句 和 表达式">
+<meta property="og:description" content="父类必须在子类前被声明,此规则适用于接口 子类只能继承父类的 Public 和 public 属性和方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T12:44:58.884Z">
+<meta property="og:updated_time" content="2018-11-22T12:44:58.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript 语法">
-<meta name="twitter:description" content="1.语句 和 表达式">
+<meta name="twitter:title" content="类和对象-继承">
+<meta name="twitter:description" content="父类必须在子类前被声明,此规则适用于接口 子类只能继承父类的 Public 和 public 属性和方法">
 
 
 
@@ -110,7 +110,7 @@
   };
 </script>
 
-  <title> javascript 语法 | 中二病也要写代码 </title>
+  <title> 类和对象-继承 | 中二病也要写代码 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
             
             
               
-                javascript 语法
+                类和对象-继承
               
             
           </h1>
@@ -283,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/11/22/js语法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/js语法/" itemprop="commentsCount"></span>
+                <a href="/2018/11/22/类和对象-继承/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/类和对象-继承/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,117 +307,209 @@
       
 
       
-        <blockquote>
-<p>1.语句 和 表达式<br><a id="more"></a></p>
-</blockquote>
-<p>2018年11月22日20:17:16<br>语句是为了完成某种任务的操作,一般情况下一条语句不需要返回值,比如下面就是一条赋值语句</p>
-<pre><code>var a;
-</code></pre><p>语句以<code>;</code>为结尾,而<code>;</code>之前可以没有任何内容,javascript 将其视为空语句,可以这么写,但不推荐:</p>
-<pre><code>;;;
-</code></pre><p>表达式是一条期望得到值得语句,一条语句可以有多条表达式,这是一条有表达式的语句:</p>
-<pre><code>var a = 123-122;
-</code></pre><p>而表达式本身 不需要<code>;</code>结尾,因为如果添加了分号, javascript 引擎会把它视为语句,但他仅有返回值,没有任何操作 没有任何意义</p>
-<pre><code>//一下语句虽然经过计算,但无意义
-1+2;
-&apos;abc&apos;+&apos;d&apos;;
-</code></pre><blockquote>
-<p>2.变量</p>
-</blockquote>
-<p>变量是对值得引用,使用变量等于引用一个值,每一个变量都需要一个变量名;</p>
-<p>声明变量用<code>var</code></p>
-<p>声明和赋值是两个步骤:</p>
-<pre><code>var a = 1;
-//其实是首先先创建一个变量
-var a;
-//然后在变量和a 和数值1之间建立引用关系
-a = 1;
-</code></pre><p>如果声明一个变量没有赋值那么,这个变量的值是不存在的, js 用undefined 表示</p>
-<pre><code>//在浏览器的console 中如果,输入 var a;
-var a;
-//console 中会直接返回undefined
-</code></pre><p>可以一次声明多个变量,用<code>,</code>分隔</p>
-<pre><code>var a ,b;
-var a =1 ,b=2;
-</code></pre><p>javascript 和 Php 一样都是动态语言, 变量没有类型限制:</p>
-<pre><code>var a =1;
-a = {1:1};
-a=&apos;a&apos;;
-</code></pre><p>重新声明一个变量是无效的(不会报错),但重新声明时可以赋值并覆盖之前变量的值,不推荐这么写</p>
-<pre><code>var  a = 1;
-var a; //无效
-var a = 2;//a等于2 不推荐 , 正常写法: a = 2;
-</code></pre><blockquote>
-<p>3.变量提升</p>
-</blockquote>
-<p>javascript 引擎的工作方式,先解析代码,并获取所有声明变量的语句,相当于把所有变量的声明都提升到代码的头部,这就是变量提升,变量提升只对<code>var</code>声明的有效, 如果声明一个新变量不用<code>var</code>,是会报错的,比如:<code>new = 1;</code>这种写法不适用于声明变量,但可以作为对象的属性赋值</p>
-<pre><code>console.log(gg);
-var gg = 1; 
-//显示 undefined,这是因为实际运行的代码是:
-//var gg;
-//console.log(gg);
-//gg = 1;
-</code></pre><blockquote>
-<p>1.4标识符</p>
-</blockquote>
-<p>标识符标识符就是个名字,用来识别不同对象,可以理解为变量名和函数名.js 的标识符大小写敏感, a 和 A ,a()和A()都是不同的变量和函数</p>
-<p>标识符有明确的命名规则,不符合规则js 解释引擎就会报错:</p>
-<p>第一个字符，可以是任意Unicode字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。</p>
-<p>第二个字符及后面的字符，除了Unicode字母、美元符号和下划线，还可以用数字0-9。</p>
-<pre><code>var _a = 1;
-var $_1 =1;
-var _1 = 1;
-var $1 = 1;
-var a1 = 1;
-var $a = 1;
-var _a = 1;
-var a_$1 = 1;
-var π =1 ;    
-var 中文 = 1;
-var ##qwe =1; //报错
-var 1 = 1;//报错
-var a-1 = 1;//报错
-</code></pre><blockquote>
-<p>1.5 注释</p>
-</blockquote>
-<p>单行注释<code>//这是单行注释</code></p>
-<p>多行注释</p>
-<pre><code>/*
-这是多行注释
-.
-.
-.
-*/
-</code></pre><blockquote>
-<p>1.6 区块 这就是区块:</p>
-</blockquote>
-<pre><code>{
-//我在区块里面
-}
-</code></pre><p>js 中的区块在单独使用时并不是一个单独的作用域    , 区块内外是同一作用域 , 可以理解为没有代码隔离, </p>
-<p>但是区块是用来构成更复杂的语法结构  <code>for , while foreach  function</code></p>
-<pre><code>{
+        <p>父类必须在子类前被声明,此规则适用于接口</p>
+<p>子类只能继承父类的 Public 和 public 属性和方法</p>
+<a id="more"></a>
+<p>子类如果不声明构造和析构函数自动继承父类的,如果声明了会覆盖,如果想继承并扩展可以用 Parent::</p>
+<p>当然其他自定义函数想要继承并扩展也是这样</p>
+<pre><code>    &lt;?php
 
-    var a = 1;
-}
-if(a ==  1){
+class ParentClass {
 
-     var b = 1 ;
+ public function __construct(){
+     echo &apos;this is base construct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+ public function __destruct(){
+     echo &apos;this is base destruct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+
 }
-function test(){
-    var c = 1;
+
+class ChildClass extends ParentClass {
+
+ public function __construct(){
+     echo &apos;this is child construct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+ public function __destruct(){
+     echo &apos;this is child destruct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+
 }
-console.log(a);//1
-console.log(b);//1
-console.log(c);//Uncaught ReferenceError: c is not defined
+
+    new ChildClass();
+//输出this is child construct
+//this is child destruct
+
+class ParentClass2 {
+
+ public function __construct(){
+     echo &apos;this is base construct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+ public function __destruct(){
+     echo &apos;this is base destruct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+
+}
+class ChildClass2 extends ParentClass2 {
+
+ public function __construct(){
+     parent::__construct();
+     echo &apos;this is child construct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+ public function __destruct(){
+     parent::__destruct();
+     echo &apos;this is child destruct&apos;.&quot;&lt;/br&gt;&quot;;
+ }
+
+}
+ new ChildClass2();
+//  this is base construct
+// this is child construct
+// this is base destruct
+// this is child destruct
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+
+class ParentClass {
+    function abc(){
+        echo &apos;base abc&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    static function ss(){
+        echo &apos;this is base static ss&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+
+ class ChildClass extends ParentClass {
+    function abc(){
+        parent::abc();//这里用 self 是不行的会出现类似死循环那种错误
+        echo &apos;child abc&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    static function ss(){ //这个地方不写static 是不行滴
+        parent::ss();
+        echo &apos;this is child  static ss&apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+
+$a = new ChildClass();
+$a-&gt;abc();
+$a-&gt;ss();
+// base abc
+// child abc
+// this is base static ss
+// this is child static ss
 </code></pre><blockquote>
-<p>2条件语句<br>js 提供 js 和 swith</p>
-<p>2.1 if结构</p>
+<p>demo</p>
 </blockquote>
-<p>if判断为 true 之后如果只需要执行一条语句,不需要大括号:</p>
-<pre><code>var a = 1;
-if(1 == a)console.log(a);//输出1
-</code></pre><p>多条语句 就要加大括号<code>{}</code><br>_</p>
+<p>php 不能多继承 但是链式继承会发生什么呢:</p>
+<pre><code>       &lt;?php
+class grade{
+    public $gradeArg= &apos;grageArg&apos;.&quot;&lt;/br&gt;&quot;;
+    public $gradeArg2= &apos;grageArg2&apos;.&quot;&lt;/br&gt;&quot;;
+    public function func1(){
+        echo &apos;this is class grage\&apos;s func1 &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function gFunc1(){
+        echo &apos;this is class grage\&apos;s gfunc1 &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+class child extends grade{
+    public $gradeArg= &apos;childArg&apos;.&quot;&lt;/br&gt;&quot;;
+        public function func1(){
+        echo &apos;this is class child\&apos;s func1 &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+    public function cFunc1(){
+        echo &apos;this is class cFunc1\&apos;s gfunc1 &apos;.&quot;&lt;/br&gt;&quot;;
+    }
+}
+class sunzi extends child{
 
+}
+$a = new grade();
+$b = new child();
+$c = new sunzi();
+echo $c-&gt;gradeArg;//输出 childArg 因为这个类属性已经被 Child类重写了
+echo $c-&gt;gradeArg2;//输出 grageArg2 ,Child没有直接继承自 grade 类
+$c-&gt;func1();//this is class child\&apos;s func1 ,因为此方法被 child 覆盖
+$c-&gt;gFunc1();//this is class grage\&apos;s gfunc1,因为此方法继承自 grade
+$c-&gt;cFunc1();//this is class cFunc1\&apos;s gfunc1 ,因为此方法继承自 child
+</code></pre><p>&gt;</p>
+<pre><code>    &lt;?php
+error_reporting(-1);
+//写这行是因为下面的 call 方法用静态的方法调用非静态函数,虽然会成功但是会报错
+class grade{
+    public function someFunc(){
+        echo __CLASS__;
+        var_dump($this);
+    }
+}
+class child extends grade{
+    public function someFunc(){
+        echo __CLASS__;
+        var_dump($this);
+    }
+}
+class sunzi extends child{
+    public function someFunc(){
+        echo __CLASS__;
+        var_dump($this);
+    }
+    public function call(){
+        self::someFunc();
+        parent::someFunc();
+        child::someFunc();
+        grade::someFunc();
+    }
+}
+$s = new sunzi();
+$s-&gt;call();
+//$this 伪变量从哪个类调用的就是哪个类, class 常量代表他所在的那个类名
+//sunzi
+//object sunzi
+//child 
+//object sunzi 
+//child 
+//object sunzi
+//grade
+//object sunzi 
+</code></pre><p>&gt;</p>
+<pre><code>//不会报错
+    &lt;?php
+class A extends B{
+
+}
+class C{
+
+}
+class B extends C{
+
+}
+new A();
+//这样也不会报错
+&lt;?php
+class A extends B{
+
+}
+
+class B {
+
+}
+
+new A();
+
+//这样就会报错 Class B Not found
+&lt;?php
+class A extends B{
+
+}
+
+class B extends C{
+
+}
+class C{
+
+}
+new A();
+</code></pre>
       
     </div>
     
@@ -440,16 +532,16 @@ if(1 == a)console.log(a);//输出1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/22/类和对象-构造和析构函数/" rel="next" title="类和对象-构造函数和析构函数">
-                <i class="fa fa-chevron-left"></i> 类和对象-构造函数和析构函数
+              <a href="/2018/11/22/表达式/" rel="next" title="php  表达式">
+                <i class="fa fa-chevron-left"></i> php  表达式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/22/类和对象-访问控制/" rel="prev" title="访问控制">
-                访问控制 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/22/数据类型/" rel="prev" title="php类型">
+                php类型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -476,7 +568,7 @@ if(1 == a)console.log(a);//输出1
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/11/22/js语法/" data-title="javascript 语法" data-url="http://yoursite.com/2018/11/22/js语法/">
+      <div class="ds-thread" data-thread-key="2018/11/22/类和对象-继承/" data-title="类和对象-继承" data-url="http://yoursite.com/2018/11/22/类和对象-继承/">
       </div>
     
   </div>

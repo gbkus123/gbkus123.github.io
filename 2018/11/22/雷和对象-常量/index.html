@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=) 听说这里是关于我 Ψ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)Ψ  喝醉烈的酒,日最野的狗    └(=^‥^=)┐└(=^‥^=)┐└(=^‥^">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="定义和调用类常量  类中的常量是始终保持不变的值,在定义时不需要$符号,常量的值必须是一个定值,不能使变量,类属性,数学运算的结果(在php5.6之后已经可以是数学运算的结果了)),或者函数返回的结果,这一点和类的属性很像,定义常量用const关键字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类和对象-类常量">
+<meta property="og:url" content="http://yoursite.com/2018/11/22/雷和对象-常量/index.html">
 <meta property="og:site_name" content="中二病也要写代码">
-<meta property="og:description" content="(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=) 听说这里是关于我 Ψ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)Ψ  喝醉烈的酒,日最野的狗    └(=^‥^=)┐└(=^‥^=)┐└(=^‥^">
+<meta property="og:description" content="定义和调用类常量  类中的常量是始终保持不变的值,在定义时不需要$符号,常量的值必须是一个定值,不能使变量,类属性,数学运算的结果(在php5.6之后已经可以是数学运算的结果了)),或者函数返回的结果,这一点和类的属性很像,定义常量用const关键字">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T12:44:58.896Z">
+<meta property="og:updated_time" content="2018-11-22T12:44:58.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=) 听说这里是关于我 Ψ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)Ψ  喝醉烈的酒,日最野的狗    └(=^‥^=)┐└(=^‥^=)┐└(=^‥^">
+<meta name="twitter:title" content="类和对象-类常量">
+<meta name="twitter:description" content="定义和调用类常量  类中的常量是始终保持不变的值,在定义时不需要$符号,常量的值必须是一个定值,不能使变量,类属性,数学运算的结果(在php5.6之后已经可以是数学运算的结果了)),或者函数返回的结果,这一点和类的属性很像,定义常量用const关键字">
 
 
 
@@ -110,13 +110,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    about | 中二病也要写代码
-  
-</title>
+  <title> 类和对象-类常量 | 中二病也要写代码 </title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,7 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -247,16 +241,228 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <p>(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)(=´∇｀=)</p>
-<p><strong>听说这里是<code>关于我</code></strong></p>
-<p>Ψ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)ΨΨ(￣(ｴ)￣)Ψ</p>
-<blockquote>
-<p>喝醉烈的酒,日最野的狗  </p>
-</blockquote>
-<p>└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐└(=^‥^=)┐</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                类和对象-类常量
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-11-22T20:44:58+08:00" content="2018-11-22">
+              2018-11-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/11/22/雷和对象-常量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/11/22/雷和对象-常量/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>定义和调用类常量</p>
+</blockquote>
+<p>类中的常量是始终保持不变的值,在定义时不需要<code>$</code>符号,常量的值必须是一个定值,不能使变量,类属性,数学运算的结果(在php5.6之后已经可以是数学运算的结果了)),或者函数返回的结果,这一点和类的属性很像,定义常量用<code>const</code>关键字</p>
+<a id="more"></a>
+<pre><code>    &lt;?php
+//php5的某个版本之后 const 既可以在类中也可以在类外定义常量
+const A=&apos;1&apos;.&quot;&lt;/br&gt;&quot;;
+echo A;//1,在类外的常量可以直接获取
+const STR=&apos;out of class&apos;.&apos;&lt;/br&gt;&apos;;
+class test{
+    const STR=&apos;inside class&apos;.&apos;&lt;/br&gt;&apos;;
+    function getCon(){
+        echo self::STR;//inside class获取在类中的常量用 self::
+        echo STR;//out of class不用 self::会去类外找该常量
+        echo NOCONST;//NOCONST 如果试图去输出一个没有定义的常量,会报 Notice,并输出该常量的名字
+        echo &quot;&lt;/br&gt;&quot;;
+    }
+}
+class child extends test{
+    function getCon(){
+        echo self::STR;//inside class
+        echo parent::STR;//inside class 子类这里也可以用 parent::
+        echo STR;//out of class 如果不用 self::会去类外找该常量
+        echo NOCONST;//如果试图去输出一个没有定义的常量,会报 Notice,并输出该常量的名字
+        echo &quot;&lt;/br&gt;&quot;;
+    }
+}
+$t = new test();
+$t-&gt;getCon();
+$c = new child();
+$c-&gt;getCon();
+//直接获取类的常量,获取用变量存储类名,或者用实例化的对象来获取常量都是可以的
+echo test::STR;//inside class
+$class=&apos;test&apos;;//inside class
+echo $class::STR;//inside class
+echo $t::STR;//inside class
+echo $c::STR;//inside class
+</code></pre><blockquote>
+<p>doc 格式与常量</p>
+</blockquote>
+<pre><code>&lt;?php
+class test {
+    const heredoc=&lt;&lt;&lt;HERE
+    here
+HERE;
+    const newdoc=&lt;&lt;&lt;&apos;new&apos;
+    new
+new;
+}
+echo test :: heredoc;//here
+echo test ::newdoc;//new
+</code></pre><p>常量的访问权限在文档里面没有说,但应该是 Public</p>
+<blockquote>
+<p>demo</p>
+</blockquote>
+<pre><code>&lt;?php
+//在 php5.6之后
+class test {
+const SEC_PER_DAY = 60 * 60 * 24;
+}    
+echo test::SEC_PER_DAY;//86400
+</code></pre><p>&gt;</p>
+<pre><code>//test2.php
+&lt;?php
+namespace test2;
+const file=&apos;this is test2.php&apos;;
+//test.php
+&lt;?php
+require(&apos;test2.php&apos;);
+echo (Test2\file);//it will print this is test2.php
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php    
+class dbObject{
+    const TABLE_NAME=&apos;none&apos;;
+    static public function  getQuery(){
+        $c=get_called_class();//返回调用该静态方法的类
+        return &quot;SELECT * FROM `&quot;.$c::TABLE_NAME.&quot;`&quot;;
+    }
+}
+class tableUser extends dbObject{
+    const TABLE_NAME=&apos;user&apos;;
+}
+class tableOrder extends dbObject{
+    const TALBE_NAME=&apos;order&apos;;
+}
+echo dbObject::getQuery().&quot;&lt;/br&gt;&quot;;
+echo tableUser::getQuery().&quot;&lt;/br&gt;&quot;;
+echo tableOrder::getQuery().&quot;&lt;/br&gt;&quot;;
+//SELECT * FROM `none`
+//SELECT * FROM `user`
+//SELECT * FROM `none`
+</code></pre><p>&gt;</p>
+<pre><code>&lt;?php
+//self::,static:: +常量,和 new self new static 一样
+//self 返回代码所在类的常量, static返回调用该函数的类的常量
+class A{
+    const BOOL = &apos;A&apos;;
+    public function getSelf(){
+        return self::BOOL;
+    }
+    public function getStatic(){
+        return static::BOOL;
+    }
+}
+class B extends A{
+    const BOOL = &apos;B&apos;;
+}
+$b=new B();
+echo $b-&gt;getSelf().&quot;&lt;/br&gt;&quot;;//A
+echo $b-&gt;getStatic();//B
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/22/回调类型/" rel="prev" title="回调类型">
+                回调类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -267,7 +473,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="about/index.html" data-title="about" data-url="http://yoursite.com/about/index.html">
+      <div class="ds-thread" data-thread-key="2018/11/22/雷和对象-常量/" data-title="类和对象-类常量" data-url="http://yoursite.com/2018/11/22/雷和对象-常量/">
       </div>
     
   </div>
@@ -291,8 +497,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="http://45.32.40.33/phpManual/touxiang.jpg" alt="秋哥">
           <p class="site-author-name" itemprop="name">秋哥</p>
@@ -346,6 +561,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -442,6 +668,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
